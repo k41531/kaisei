@@ -27,15 +27,15 @@ return (
             </tr>
             <tr>
                <td>GitHub</td> 
-               <td>me@kaisei.dev</td>
-            </tr>
-            <tr>
-               <td>Blog</td> 
-               <td><a href="https://zenn.dev/k41531">zenn.dev/k41531</a></td>
+               <td><a href="https://github.com/k41531">github.com/k41531</a></td>
             </tr>
             <tr>
                <td>Twitter</td> 
                <td><a href="https://twitter.com/k41531">twitter.com/k41531</a></td>
+            </tr>
+            <tr>
+               <td>Blog</td> 
+               <td><a href="https://zenn.dev/k41531">zenn.dev/k41531</a></td>
             </tr>
           </tbody>
         </table>
