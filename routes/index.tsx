@@ -27,15 +27,21 @@ return (
       <title>Kaisei</title>
     </Head>
     <header>
-      ~
-      <hr class="my-4"/>
+      <h1 class="text-xl mb-1">Home</h1>
+      <hr class="mb-4 border-black"/>
     </header>
     <main class="grid gap-3">
       <section>
-        <h2 class="font-bold">
+        <h2 class="font-bold mb-1">
           About me
         </h2>
         <table>
+          <thead>
+            <tr>
+              <th class="w-32">Item</th>
+              <th>Value</th>
+            </tr>
+          </thead>
           <tbody>
             <tr>
                <td>Name</td> 
@@ -61,16 +67,22 @@ return (
         </table>
       </section>
       <section>
-        <h2 class="font-bold">
+        <h2 class="font-bold mb-1">
           Post
         </h2>
         <table>
+          <thead>
+            <tr>
+              <th class="w-32">Date</th>
+              <th>Title</th>
+            </tr>
+          </thead>
           <tbody>
             {
                 data?.map(article => (
                 <tr>
                 <td>{article.published_at.match(/\d+-\d+-\d+/)}</td>
-                <td>{article.title}</td>
+                <td><a href={"https://zenn.dev"+article.path}>{article.title}</a></td>
                 </tr>
                 ))
             }
