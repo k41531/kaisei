@@ -30,7 +30,7 @@ return (
       <h1 class="text-xl mb-1">Home</h1>
       <hr class="mb-4 border-black"/>
     </header>
-    <main class="grid gap-3">
+    <main class="grid gap-4">
       <section>
         <h2 class="font-bold mb-1">
           About me
