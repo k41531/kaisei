@@ -25,6 +25,7 @@ return (
   <body class="py-4 px-6">
     <Head>
       <title>Kaisei</title>
+      <meta name="description" content="The homepage of Kaisei, an engineer.">
     </Head>
     <header>
       <h1 class="text-xl mb-1">Home</h1>
