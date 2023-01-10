@@ -10,7 +10,7 @@ interface Article {
 
 export const handler: Handlers<Article[] | null> = {
   async GET(_, ctx) {
-    const resp = await fetch(`https://zenn.dev/api/articles?username=k41531&count=10&order=latest`);
+    const resp = await fetch('https://zenn.dev/api/articles?username=k41531&count=10&order=latest');
     if (resp.status === 404) {
       return ctx.render(null);
     }
@@ -25,7 +25,7 @@ return (
   <body class="py-4 px-6">
     <Head>
       <title>Kaisei</title>
-      <meta name="description" content="The homepage of Kaisei, an engineer.">
+      <meta name="description" content="The homepage of Kaisei, an engineer."/>
     </Head>
     <header>
       <h1 class="text-xl mb-1">Home</h1>
