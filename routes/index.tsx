@@ -22,27 +22,22 @@ export const handler: Handlers<Article[] | null> = {
 
 export default function Home({ data }: PageProps<Article[] | null>) {
 return (
-  <body class="py-4 px-6">
+  <body class="py-4 px-6 max-w-xl mx-auto bg-dark-gray text-white">
     <Head>
       <title>Kaisei</title>
       <meta name="description" content="The homepage of Kaisei, an engineer."/>
     </Head>
     <header>
       <h1 class="text-xl mb-1">Home</h1>
-      <hr class="mb-4 border-black"/>
+      <hr class="mb-4 border-light-gray"/>
     </header>
     <main class="grid gap-4">
       <section>
-        <h2 class="font-bold mb-1">
+        <h2 class="">
           About me
         </h2>
+        <hr class="mb-4 border-light-gray"/>
         <table>
-          <thead>
-            <tr>
-              <th class="w-32">Item</th>
-              <th>Value</th>
-            </tr>
-          </thead>
           <tbody>
             <tr>
                <td>Name</td> 
@@ -71,25 +66,19 @@ return (
         <h2 class="font-bold mb-1">
           Post
         </h2>
-        <table>
-          <thead>
-            <tr>
-              <th class="w-32">Date</th>
-              <th>Title</th>
-            </tr>
-          </thead>
-          <tbody>
+        <hr class="mb-4 border-light-gray"/>
+        <div>
+          <div class="grid gap-3 content-center">
             {
                 data?.map(article => (
-                <tr>
-                <td>{article.published_at.match(/\d+-\d+-\d+/)}</td>
-                <td><a href={"https://zenn.dev"+article.path}>{article.title}</a></td>
-                </tr>
+                <div class="flex gap-2 items-center">
+                <div class="text-xs">{article.published_at.match(/\d+-\d+-\d+/)}</div>
+                <div ><a class="truncate ..." href={"https://zenn.dev"+article.path}>{article.title}</a></div>
+                </div>
                 ))
             }
-          </tbody>
-        </table>
-        
+          </div>
+        </div>
       </section>
     </main>
   </body>
