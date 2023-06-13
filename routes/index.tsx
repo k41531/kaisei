@@ -33,7 +33,7 @@ return (
     </header>
     <main class="grid gap-4">
       <section>
-        <h2 class="">
+        <h2>
           About me
         </h2>
         <hr class="mb-4 border-light-gray"/>
@@ -63,10 +63,10 @@ return (
         </table>
       </section>
       <section>
-        <h2 class="font-bold mb-1">
+        <h2>
           Post
         </h2>
-        <hr class="mb-4 border-light-gray"/>
+        <hr class="mb-1 border-light-gray"/>
         <div>
           <div class="grid gap-3 content-center">
             {
