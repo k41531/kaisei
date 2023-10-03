@@ -14,11 +14,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        'dark-gray': "#465469",
+        'dark-bg': "#0a0a0b",
         'light-gray': "#e2e8f0",
         tertiary: "#0000ff"
-
-      } 
+      }
     }
-  } 
+  }
 } as Options;

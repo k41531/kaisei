@@ -10,7 +10,7 @@ interface LayoutProps {
 
 export default function Layout({ children, title, description }: LayoutProps) {
   return (
-    <body class="py-4 px-6 max-w-xl mx-auto bg-dark-gray text-white">
+    <body class="py-4 px-6 max-w-xl mx-auto bg-dark-bg text-white">
       <Head>
         <title>Kaisei</title>
         <meta name="description" content={description} />
