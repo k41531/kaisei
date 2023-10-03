@@ -1,0 +1,7 @@
+* {
+  --color-canvas-subtle: #252525;
+  --color-canvas-default: #444444;
+}
+.markdown-body {
+  overflow: auto;
+}
