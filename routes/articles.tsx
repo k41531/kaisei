@@ -30,7 +30,7 @@ export default function Articles({ data }: PageProps<Article[] | null>) {
         <h2>All articles</h2>
         <a class="text-xs" href={"https://zenn.dev/k41531"}>zenn</a>
         </div>
-        <hr class="mb-1 border-light-gray" />
+        <hr class="mb-1 border-foreground" />
         <div>
           <div class="grid gap-3 content-center">
             {data?.map((article) => (

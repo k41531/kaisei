@@ -29,7 +29,7 @@ export default function Home({ data }: PageProps<Article[] | null>) {
         <h2>
           About me
         </h2>
-        <hr class="mb-4 border-light-gray" />
+        <hr class="mb-4 border-foreground" />
         <table>
           <tbody>
             <tr>
@@ -66,7 +66,7 @@ export default function Home({ data }: PageProps<Article[] | null>) {
         <h2>New posts</h2>
         <a class="text-xs" href={"/articles"}>more</a>
         </div>
-        <hr class="mb-1 border-light-gray" />
+        <hr class="mb-1 border-foreground" />
         <div>
           <div class="grid gap-3 content-center">
             {data?.map((article) => (
