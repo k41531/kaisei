@@ -1,6 +1,7 @@
 // layout.tsx
 import { ComponentChildren } from "preact";
 import { Head } from "$fresh/runtime.ts";
+import GlassCard from "./atoms/GlassCard.tsx";
 
 interface LayoutProps {
   children: ComponentChildren;
@@ -10,17 +11,18 @@ interface LayoutProps {
 
 export default function Layout({ children, title, description }: LayoutProps) {
   return (
-    <body class="py-4 px-6 max-w-xl mx-auto bg-background text-black">
+    <body class="py-4 px-6 grid gap-2 max-w-xl w-full mx-auto bg-primary text-white sm:min-w-64">
       <Head>
-        <title>Kaisei</title>
+        <title>{"Kaisei's " + title}</title>
         <meta name="description" content={description} />
-        <link rel="stylesheet" href="/styles.css" /> 
+        <link rel="stylesheet" href="/styles.css" />
       </Head>
       <header>
-        <h1 class="text-xl mb-1">{title}</h1>
-        <hr class="mb-4 border-foreground"/>
+        <GlassCard>
+          <h1 class="text-xl">{title}</h1>
+        </GlassCard>
       </header>
-      <main class="grid gap-4">
+      <main class="grid gap-4 w-full">
         {children}
       </main>
     </body>

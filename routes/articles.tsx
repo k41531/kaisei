@@ -1,4 +1,5 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
+import GlassCard from "../components/atoms/GlassCard.tsx";
 
 import Layout from "../components/layout.tsx";
 
@@ -25,20 +26,20 @@ export const handler: Handlers<Article[] | null> = {
 export default function Articles({ data }: PageProps<Article[] | null>) {
   return (
     <Layout title="Articles" description="The homepage of Kaisei, an engineer.">
-      <section>
+      <GlassCard isGradient>
         <div class="flex justify-between items-end">
-        <h2>All articles</h2>
-        <a class="text-xs" href={"https://zenn.dev/k41531"}>zenn</a>
+          <h2>All articles</h2>
+          <a class="text-xs" href={"https://zenn.dev/k41531"}>zenn</a>
         </div>
         <hr class="mb-1 border-foreground" />
         <div>
           <div class="grid gap-3 content-center">
             {data?.map((article) => (
               <div class="flex gap-2 items-center">
-                <div class="text-xs">
+                <div class="text-xs flex-shrink-0">
                   {article.published_at.match(/\d+-\d+-\d+/)}
                 </div>
-                <div>
+                <div class="flex-grow truncate">
                   <a
                     class="truncate ..."
                     href={"https://zenn.dev" + article.path}
@@ -50,7 +51,7 @@ export default function Articles({ data }: PageProps<Article[] | null>) {
             ))}
           </div>
         </div>
-      </section>
+      </GlassCard>
     </Layout>
   );
 }

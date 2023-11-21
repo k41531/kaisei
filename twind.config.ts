@@ -1,23 +1,31 @@
 import { Options } from "$fresh/plugins/twind.ts";
-import { apply } from "twind";
 
 export default {
   selfURL: import.meta.url,
-  preflight: {
-    tbody: apply`border-1 border-solid`,
-    tr: apply`border-1 border-solid`,
-    thead: apply`font-bold`,
-    th: apply`px-2 border-b-2 border-solid text-left`,
-    td: apply`border-foreground px-2 border-1 border-red`,
-    a: apply`text-link no-underline hover:underline`,
-  },
   theme: {
     extend: {
+      fontFamily: {
+        'sans': ['BerkeleyMono', 'monospace'],
+      },
+      backgroundImage: {
+        'gradient-radial': 'linear-gradient(131deg, rgba(255, 255, 255, 0.28) 0%, rgba(228, 228, 228, 0.00) 100%)',
+      },
+      backdropFilter: {
+        'blur': 'blur(12px)',
+      },
       colors: {
-        'background': "#E5E5CB",
-        'foreground': "#1A120B",
-        'link': "#3C2A21",
+        primary: "#2977BF",
+      },
       }
+    },
+    preflight: {
+      // import local fonts
+      '@font-face': [
+        {
+          fontFamily: 'BerkeleyMono',
+          src: 'url(/fonts/BerkeleyMono-Regular.woff2) format("woff2")',
+        },
+      ],
     }
-  }
+
 } as Options;
