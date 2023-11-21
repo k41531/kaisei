@@ -61,8 +61,7 @@ export default function Home({ data }: PageProps<Article[] | null>) {
       </GlassCard>
       <GlassCard isGradient>
         <div class="flex justify-between items-end">
-          <h2>New posts</h2>
-          <a class="text-xs" href={"/articles"}>more</a>
+          <h2>New articles</h2>
         </div>
         <hr class="mb-1 border-foreground" />
         <div>

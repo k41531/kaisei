@@ -2,6 +2,7 @@
 import { ComponentChildren } from "preact";
 import { Head } from "$fresh/runtime.ts";
 import GlassCard from "./atoms/GlassCard.tsx";
+import Header from "./organisms/header.tsx";
 
 interface LayoutProps {
   children: ComponentChildren;
@@ -17,11 +18,7 @@ export default function Layout({ children, title, description }: LayoutProps) {
         <meta name="description" content={description} />
         <link rel="stylesheet" href="/styles.css" />
       </Head>
-      <header>
-        <GlassCard>
-          <h1 class="text-xl">{title}</h1>
-        </GlassCard>
-      </header>
+      <Header />
       <main class="grid gap-4 w-full">
         {children}
       </main>

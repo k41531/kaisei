@@ -5,7 +5,7 @@ export default function GlassCard(
 ) {
   return (
     <div
-      class={`drop-shadow-lg backdrop-blur bg-opacity-30 border-2 border-white border-opacity-30 rounded-sm p-2 ${
+      class={`drop-shadow-lg backdrop-blur bg-opacity-30  rounded-md p-3 ${
         props.isGradient ? "bg-gradient-radial" : "bg-white"
       }`}
     >
