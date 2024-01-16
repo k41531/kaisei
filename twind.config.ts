@@ -8,13 +8,13 @@ export default {
         'sans': ['BerkeleyMono', 'monospace'],
       },
       backgroundImage: {
-        'gradient-radial': 'linear-gradient(131deg, rgba(255, 255, 255, 0.28) 0%, rgba(228, 228, 228, 0.00) 100%)',
+        'gradient-radial': 'linear-gradient(131deg, rgba(255, 255, 255, 0.10) 0%, rgba(228, 228, 228, 0.00) 100%)',
       },
       backdropFilter: {
         'blur': 'blur(12px)',
       },
       colors: {
-        primary: "#2977BF",
+        primary: "#252525",
       },
       }
     },

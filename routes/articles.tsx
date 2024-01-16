@@ -26,7 +26,7 @@ export const handler: Handlers<Article[] | null> = {
 export default function Articles({ data }: PageProps<Article[] | null>) {
 	return (
 		<Layout title="Articles" description="The homepage of Kaisei, an engineer.">
-			<GlassCard isGradient>
+			<GlassCard>
 				<div class="flex justify-between items-end">
 					<h2>All articles</h2>
 					<a class="text-xs" href={"https://zenn.dev/k41531"}>

@@ -25,7 +25,7 @@ export const handler: Handlers<Article[] | null> = {
 export default function Home({ data }: PageProps<Article[] | null>) {
   return (
     <Layout title="Home" description="The homepage of Kaisei, an engineer.">
-      <GlassCard isGradient>
+      <GlassCard>
         <h2>
           About me
         </h2>
@@ -59,7 +59,7 @@ export default function Home({ data }: PageProps<Article[] | null>) {
           </div>
         </div>
       </GlassCard>
-      <GlassCard isGradient>
+      <GlassCard>
         <div class="flex justify-between items-end">
           <h2>New articles</h2>
         </div>
