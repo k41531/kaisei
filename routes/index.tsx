@@ -1,5 +1,5 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
-import GlassCard from "../components/atoms/GlassCard.tsx";
+import SectionCard from "../components/atoms/SectionCard.tsx";
 import Layout from "../components/layout.tsx";
 
 interface Article {
@@ -25,7 +25,7 @@ export const handler: Handlers<Article[] | null> = {
 export default function Home({ data }: PageProps<Article[] | null>) {
   return (
     <Layout title="Home" description="The homepage of Kaisei, an engineer.">
-      <GlassCard>
+      <SectionCard>
         <h2>
           About me
         </h2>
@@ -58,8 +58,8 @@ export default function Home({ data }: PageProps<Article[] | null>) {
             </div>
           </div>
         </div>
-      </GlassCard>
-      <GlassCard>
+      </SectionCard>
+      <SectionCard>
         <div class="flex justify-between items-end">
           <h2>New articles</h2>
         </div>
@@ -82,7 +82,7 @@ export default function Home({ data }: PageProps<Article[] | null>) {
             ))}
           </div>
         </div>
-      </GlassCard>
+      </SectionCard>
     </Layout>
   );
 }

@@ -1,9 +1,9 @@
-import GlassCard from "../atoms/GlassCard.tsx";
+import SectionCard from "../atoms/SectionCard.tsx";
 
 export default function Header() {
 	return (
 		<header>
-			<GlassCard>
+			<SectionCard>
 				<div class="flex justify-between items-center">
 					<h1 class="text-md">
 						<a href="/">Home</a>
@@ -12,7 +12,7 @@ export default function Header() {
 						<a href="/articles">Articles</a>
 					</div>
 				</div>
-			</GlassCard>
+			</SectionCard>
 		</header>
 	);
 }

@@ -1,5 +1,5 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
-import GlassCard from "../components/atoms/GlassCard.tsx";
+import SectionCard from "../components/atoms/SectionCard.tsx";
 
 import Layout from "../components/layout.tsx";
 
@@ -26,7 +26,7 @@ export const handler: Handlers<Article[] | null> = {
 export default function Articles({ data }: PageProps<Article[] | null>) {
 	return (
 		<Layout title="Articles" description="The homepage of Kaisei, an engineer.">
-			<GlassCard>
+			<SectionCard>
 				<div class="flex justify-between items-end">
 					<h2>All articles</h2>
 					<a class="text-xs" href={"https://zenn.dev/k41531"}>
@@ -53,7 +53,7 @@ export default function Articles({ data }: PageProps<Article[] | null>) {
 						))}
 					</div>
 				</div>
-			</GlassCard>
+			</SectionCard>
 		</Layout>
 	);
 }
