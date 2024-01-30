@@ -6,12 +6,11 @@ export default function SectionCard(props: {
 }) {
 	return (
 		<div
-			class={"p-3 "}
+			class={"p-3 bg-gray-600 rounded-md shadow-md aspect-w-1 aspect-h-1"}
 		>
         <h2>
           {props.title}
         </h2>
-        <hr class="mb-1 border-foreground" />
 			{props.children}
 		</div>
 	);

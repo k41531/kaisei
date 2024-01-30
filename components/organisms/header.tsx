@@ -3,7 +3,7 @@ import SectionCard from "../atoms/SectionCard.tsx";
 export default function Header() {
 	return (
 		<header>
-			<SectionCard>
+			<div class={"p-3"}>
 				<div class="flex justify-between items-center">
 					<h1 class="text-md">
 						<a href="/">Home</a>
@@ -12,7 +12,8 @@ export default function Header() {
 						<a href="/articles">Articles</a>
 					</div>
 				</div>
-			</SectionCard>
+				<hr class="mb-1 border-foreground" />
+			</div>
 		</header>
 	);
 }
