@@ -83,7 +83,7 @@ export default function Home({ data }: PageProps<Article[] | null>) {
             <div class="grid grid-rows-5">
               <div class="row-span-2 p-2">
                 <p>SnapJot</p>
-                <p class="text-xs">Raycast Extension</p>
+                <p class="text-xs whitespace-nowrap">Raycast Extension</p>
               </div>
               <img class="row-span-2 h-full mx-auto" src="/images/snap-jot.png" alt="snap-jot (raycast extension)" />
             </div>
