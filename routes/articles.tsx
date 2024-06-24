@@ -2,24 +2,21 @@ import { Handlers, PageProps } from "$fresh/server.ts";
 import SectionCard from "../components/atoms/SectionCard.tsx";
 
 import Layout from "../components/layout.tsx";
+import Article from "../models/article.ts";
+import { LocalPostRepository, ZennPostRepository } from "../repositries/post-repository.ts";
+import getPostMetadata from "../utils/post-metadata-getter.ts";
 
-interface Article {
-	title: string;
-	path: string;
-	published_at: string;
-}
 
 export const handler: Handlers<Article[] | null> = {
 	async GET(_, ctx) {
-		const resp = await fetch(
-			"https://zenn.dev/api/articles?username=k41531&order=latest",
-		);
-		if (resp.status === 404) {
-			return ctx.render(null);
-		}
-		const data = await resp.json();
-		const articles = data.articles;
-		return ctx.render(articles);
+		const localRepo = new LocalPostRepository();
+		const zennRepo = new ZennPostRepository();
+
+		const localPosts = await localRepo.getPosts();
+		const zennPosts = await zennRepo.getPosts();
+
+		const posts = [...localPosts, ...zennPosts];
+		return ctx.render(posts);
 	},
 };
 
@@ -37,7 +34,7 @@ export default function Articles({ data }: PageProps<Article[] | null>) {
 								<div class="flex-grow truncate">
 									<a
 										class="truncate ..."
-										href={`https://zenn.dev${article.path}`}
+										href={`${article.path}`}
 									>
 										{article.title}
 									</a>

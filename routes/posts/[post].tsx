@@ -6,8 +6,8 @@ import remarkGfm from "https://esm.sh/remark-gfm@4.0.0";
 import remarkRehype from 'https://esm.sh/remark-rehype@11.0.0';
 import rehypeStringify from 'https://esm.sh/rehype-stringify@10.0.0';
 import remarkFrontmatter from "https://esm.sh/remark-frontmatter@5.0.0";
-import extractFrontmatter from "../utils/frontmatter-extracter.ts";
-import Layout from "../components/layout.tsx";
+import extractFrontmatter from "../../utils/frontmatter-extracter.ts";
+import Layout from "../../components/layout.tsx";
 
 interface Data {
 	content: string;
@@ -33,7 +33,6 @@ export const handler: Handlers<Data> = {
 export default function GreetPage(props: PageProps<Data>) {
 	const { content } = props.data;
 	const { frontmatter } = props.data;
-	console.log(frontmatter);
 	return (
 		<Layout title="Post" description="The homepage of Kaisei, an engineer.">
 			<div
