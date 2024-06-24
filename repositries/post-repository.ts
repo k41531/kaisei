@@ -16,7 +16,8 @@ class BasePostRepository implements PostRepository {
 }
 
 export class ZennPostRepository extends BasePostRepository {
-  private readonly apiUrl = "https://zenn.dev/api/articles?username=k41531&order=latest";
+  private readonly apiUrl =
+    "https://zenn.dev/api/articles?username=k41531&order=latest";
 
   async getPosts(): Promise<Article[]> {
     try {
@@ -52,7 +53,7 @@ export class ZennPostRepository extends BasePostRepository {
       console.error("Error fetching Zenn posts with limit:", error);
       return [];
     }
-  }  
+  }
 }
 
 export class LocalPostRepository extends BasePostRepository {
@@ -63,7 +64,9 @@ export class LocalPostRepository extends BasePostRepository {
       const files = Deno.readDir(this.postsDirectory);
       const posts: Article[] = [];
       for await (const file of files) {
-        const post = await getPostMetadata(`${this.postsDirectory}/${file.name}`);
+        const post = await getPostMetadata(
+          `${this.postsDirectory}/${file.name}`,
+        );
         posts.push(post);
       }
       return posts;
@@ -79,7 +82,9 @@ export class LocalPostRepository extends BasePostRepository {
       let count = 0;
       for await (const file of files) {
         if (count >= limit) break;
-        const post = await getPostMetadata(`${this.postsDirectory}/${file.name}`);
+        const post = await getPostMetadata(
+          `${this.postsDirectory}/${file.name}`,
+        );
         posts.push(post);
         count++;
       }

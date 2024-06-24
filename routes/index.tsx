@@ -1,7 +1,10 @@
 import type { Handlers, PageProps } from "$fresh/server.ts";
 import SectionCard from "../components/atoms/SectionCard.tsx";
 import Layout from "../components/layout.tsx";
-import { LocalPostRepository, ZennPostRepository } from "../repositries/post-repository.ts";
+import {
+  LocalPostRepository,
+  ZennPostRepository,
+} from "../repositries/post-repository.ts";
 
 interface Article {
   title: string;
@@ -62,9 +65,7 @@ export default function Home({ data }: PageProps<Article[] | null>) {
                   {article.published_at.match(/\d+-\d+-\d+/)}
                 </div>
                 <div class="flex-grow truncate">
-                  <a href={article.path}>
-                    {article.title}
-                  </a>
+                  <a href={article.path}>{article.title}</a>
                 </div>
               </div>
             ))}
@@ -73,16 +74,23 @@ export default function Home({ data }: PageProps<Article[] | null>) {
       </SectionCard>
       <SectionCard title="Projects">
         <div class="grid grid-cols-4 gap-4 mt-4">
-        <a href="https://www.raycast.com/k41531/snap-jot" alt="SnapJot(Raycast Extension)">
-          <div class="rounded-md border-0 border-black shadow-md aspect-1/1">
-            <div class="grid grid-rows-5">
-              <div class="row-span-2 p-2">
-                <p>SnapJot</p>
-                <p class="text-xs whitespace-nowrap">Raycast Extension</p>
+          <a
+            href="https://www.raycast.com/k41531/snap-jot"
+            alt="SnapJot(Raycast Extension)"
+          >
+            <div class="rounded-md border-0 border-black shadow-md aspect-1/1">
+              <div class="grid grid-rows-5">
+                <div class="row-span-2 p-2">
+                  <p>SnapJot</p>
+                  <p class="text-xs whitespace-nowrap">Raycast Extension</p>
+                </div>
+                <img
+                  class="row-span-2 h-full mx-auto"
+                  src="/images/snap-jot.png"
+                  alt="snap-jot (raycast extension)"
+                />
               </div>
-              <img class="row-span-2 h-full mx-auto" src="/images/snap-jot.png" alt="snap-jot (raycast extension)" />
             </div>
-          </div>
           </a>
         </div>
       </SectionCard>

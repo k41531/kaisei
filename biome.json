@@ -10,9 +10,7 @@
     }
   },
   "files": {
-    "ignore" : [
-      "**/*.gen.*"
-    ]
+    "ignore": ["**/*.gen.*"]
   },
   "formatter": {
     "indentStyle": "space"
