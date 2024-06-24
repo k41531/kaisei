@@ -1,7 +1,6 @@
 // layout.tsx
-import { ComponentChildren } from "preact";
+import type { ComponentChildren } from "preact";
 import { Head } from "$fresh/runtime.ts";
-import SectionCard from "./atoms/SectionCard.tsx";
 import Header from "./organisms/header.tsx";
 
 interface LayoutProps {

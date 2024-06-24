@@ -1,10 +1,9 @@
-import { Handlers, PageProps } from "$fresh/server.ts";
+import type { Handlers, PageProps } from "$fresh/server.ts";
 import SectionCard from "../components/atoms/SectionCard.tsx";
 
 import Layout from "../components/layout.tsx";
-import Article from "../models/article.ts";
+import type Article from "../models/article.ts";
 import { LocalPostRepository, ZennPostRepository } from "../repositries/post-repository.ts";
-import getPostMetadata from "../utils/post-metadata-getter.ts";
 
 
 export const handler: Handlers<Article[] | null> = {
@@ -27,7 +26,7 @@ export default function Articles({ data }: PageProps<Article[] | null>) {
 				<div>
 					<div class="grid gap-3 content-center">
 						{data?.map((article) => (
-							<div class="flex gap-2 items-center">
+							<div key={article.title} class="flex gap-2 items-center">
 								<div class="text-xs flex-shrink-0">
 									{article.published_at.match(/\d+-\d+-\d+/)}
 								</div>

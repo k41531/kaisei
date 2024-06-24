@@ -1,4 +1,4 @@
-import { Handlers, PageProps } from "$fresh/server.ts";
+import type { Handlers, PageProps } from "$fresh/server.ts";
 import { CSS } from "$gfm/mod.ts";
 import { unified } from 'https://esm.sh/unified@11.0.4';
 import remarkParse from 'https://esm.sh/remark-parse@11.0.0';

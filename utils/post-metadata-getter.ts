@@ -3,7 +3,7 @@ import remarkParse from 'https://esm.sh/remark-parse@11.0.0';
 import remarkFrontmatter from "https://esm.sh/remark-frontmatter@5.0.0";
 import remarkStringfy from 'https://esm.sh/remark-stringify@11.0.0';
 import extractFrontmatter from "../utils/frontmatter-extracter.ts";
-import Article from "../models/article.ts";
+import type Article from "../models/article.ts";
 
 async function getPostMetadata(path: string) : Promise<Article>{
   const content = await Deno.readTextFile(path);

@@ -1,4 +1,4 @@
-import Article from "../models/article.ts";
+import type Article from "../models/article.ts";
 import getPostMetadata from "../utils/post-metadata-getter.ts";
 
 export interface PostRepository {
@@ -10,7 +10,7 @@ class BasePostRepository implements PostRepository {
   getPosts(): Promise<Article[]> {
     throw new Error("Method not implemented.");
   }
-  getPostLimited(limit: number): Promise<Article[]> {
+  getPostLimited(_limit: number): Promise<Article[]> {
     throw new Error("Method not implemented.");
   }
 }
@@ -25,7 +25,7 @@ export class ZennPostRepository extends BasePostRepository {
         throw new Error(`Failed to fetch articles, status: ${response.status}`);
       }
       const { articles } = await response.json();
-      return articles.map((article: any) => ({
+      return articles.map((article: Article) => ({
         title: article.title,
         published_at: article.published_at,
         path: `https://zenn.dev${article.path}`,
@@ -43,7 +43,7 @@ export class ZennPostRepository extends BasePostRepository {
         throw new Error(`Failed to fetch articles, status: ${response.status}`);
       }
       const { articles } = await response.json();
-      return articles.map((article: any) => ({
+      return articles.map((article: Article) => ({
         title: article.title,
         published_at: article.published_at,
         path: `https://zenn.dev${article.path}`,
