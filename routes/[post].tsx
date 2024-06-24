@@ -1,5 +1,5 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
-import { CSS, render } from "https://deno.land/x/gfm@0.1.28/mod.ts";
+import { CSS, render } from "$gfm/mod.ts";
 import Layout from "../components/layout.tsx";
 
 interface Data {

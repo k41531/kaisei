@@ -5,9 +5,7 @@ export default function SectionCard(props: {
 	title: string
 }) {
 	return (
-		<div
-			class={"p-3 "}
-		>
+		<div class="pt-3">
         <h2>
           {props.title}
         </h2>
