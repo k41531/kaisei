@@ -74,3 +74,38 @@ export class LocalPostRepository extends BasePostRepository {
     }
   }
 }
+
+export class UnifiedPostRepository implements PostRepository {
+  private localRepo: LocalPostRepository;
+  private zennRepo: ZennPostRepository;
+
+  constructor() {
+    this.localRepo = new LocalPostRepository();
+    this.zennRepo = new ZennPostRepository();
+  }
+
+  async getPosts(): Promise<Article[]> {
+    const localPosts = await this.localRepo.getPosts();
+    const zennPosts = await this.zennRepo.getPosts();
+    const posts = [...localPosts, ...zennPosts];
+    return posts.sort((a, b) => {
+      return (
+        new Date(b.published_at).getTime() - new Date(a.published_at).getTime()
+      );
+    });
+  }
+
+  async getPostsLimited(limit: number): Promise<Article[]> {
+    const localPosts = await this.localRepo.getPostsLimited(limit);
+    const zennPosts = await this.zennRepo.getPostsLimited(limit);
+    const posts = [...localPosts, ...zennPosts];
+    return posts
+      .sort((a, b) => {
+        return (
+          new Date(b.published_at).getTime() -
+          new Date(a.published_at).getTime()
+        );
+      })
+      .slice(0, limit);
+  }
+}

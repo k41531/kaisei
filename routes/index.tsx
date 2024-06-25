@@ -1,10 +1,7 @@
 import type { Handlers, PageProps } from "$fresh/server.ts";
 import SectionCard from "../components/atoms/SectionCard.tsx";
 import Layout from "../components/layout.tsx";
-import {
-  LocalPostRepository,
-  ZennPostRepository,
-} from "../repositries/post-repository.ts";
+import { UnifiedPostRepository } from "../repositries/post-repository.ts";
 
 interface Article {
   title: string;
@@ -14,12 +11,9 @@ interface Article {
 
 export const handler: Handlers<Article[] | null> = {
   async GET(_, ctx) {
-    const zennRepo = new ZennPostRepository();
-    const localRepo = new LocalPostRepository();
-    const zennPosts = await zennRepo.getPostsLimited(10);
-    const localPosts = await localRepo.getPostsLimited(10);
-    const articles = [...localPosts, ...zennPosts];
-    return ctx.render(articles);
+    const postRepo = new UnifiedPostRepository();
+    const posts = await postRepo.getPostsLimited(10);
+    return ctx.render(posts);
   },
 };
 

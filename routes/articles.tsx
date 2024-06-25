@@ -3,20 +3,14 @@ import SectionCard from "../components/atoms/SectionCard.tsx";
 
 import Layout from "../components/layout.tsx";
 import type Article from "../models/article.ts";
-import {
-  LocalPostRepository,
-  ZennPostRepository,
-} from "../repositries/post-repository.ts";
+import { UnifiedPostRepository } from "../repositries/post-repository.ts";
 
 export const handler: Handlers<Article[] | null> = {
   async GET(_, ctx) {
-    const localRepo = new LocalPostRepository();
-    const zennRepo = new ZennPostRepository();
+    const postRepo = new UnifiedPostRepository();
 
-    const localPosts = await localRepo.getPosts();
-    const zennPosts = await zennRepo.getPosts();
+    const posts = await postRepo.getPosts();
 
-    const posts = [...localPosts, ...zennPosts];
     return ctx.render(posts);
   },
 };
