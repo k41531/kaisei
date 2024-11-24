@@ -67,25 +67,67 @@ export default function Home({ data }: PageProps<Article[] | null>) {
         </div>
       </SectionCard>
       <SectionCard title="Projects">
-        <div class="grid grid-cols-4 gap-4 mt-4">
-          <a
-            href="https://www.raycast.com/k41531/snap-jot"
-            alt="SnapJot(Raycast Extension)"
-          >
-            <div class="rounded-md border-0 border-black shadow-md aspect-1/1">
-              <div class="grid grid-rows-5">
-                <div class="row-span-2 p-2">
-                  <p>SnapJot</p>
-                  <p class="text-xs whitespace-nowrap">Raycast Extension</p>
+        <div class="grid grid-cols-4 ">
+          <div class="grid gap-4 mt-4">
+            <a
+              href="https://k41531.github.io/2024-AdventCalendar/"
+              alt="2024 Advent Calendar"
+            >
+              <div class="rounded-md aspect-1/1">
+                <div class="grid grid-rows-5">
+                  <div class="row-span-2 p-2">
+                    <p>2024</p>
+                    <p class="text-xs whitespace-nowrap">Advent Calendar</p>
+                  </div>
+                  <img
+                    class="row-span-2 h-full mx-auto"
+                    src="/images/advent-calendar-2024.png"
+                    alt="advent-calendar-2024"
+                  />
                 </div>
-                <img
-                  class="row-span-2 h-full mx-auto"
-                  src="/images/snap-jot.png"
-                  alt="snap-jot (raycast extension)"
-                />
               </div>
-            </div>
-          </a>
+            </a>
+          </div>
+          <div class="grid gap-4 mt-4">
+            <a
+              href="https://www.raycast.com/k41531/snap-jot"
+              alt="SnapJot(Raycast Extension)"
+            >
+              <div class="rounded-md aspect-1/1">
+                <div class="grid grid-rows-5">
+                  <div class="row-span-2 p-2">
+                    <p>SnapJot</p>
+                    <p class="text-xs whitespace-nowrap">Raycast Extension</p>
+                  </div>
+                  <img
+                    class="row-span-2 h-full mx-auto"
+                    src="/images/snap-jot.png"
+                    alt="snap-jot (raycast extension)"
+                  />
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="grid gap-4 mt-4">
+            <a
+              href="https://k41531.github.io/2022-AdventCalendar"
+              alt="2022 Advent Calendar"
+            >
+              <div class="rounded-md  aspect-1/1">
+                <div class="grid grid-rows-5">
+                  <div class="row-span-2 p-2">
+                    <p>2022</p>
+                    <p class="text-xs whitespace-nowrap">Advent Calendar</p>
+                  </div>
+                  <img
+                    class="row-span-2 h-full mx-auto"
+                    src="/images/advent-calendar-2022.png"
+                    alt="advent-calendar-2022"
+                  />
+                </div>
+              </div>
+            </a>
+          </div>
         </div>
       </SectionCard>
     </Layout>
