@@ -54,11 +54,11 @@ export default function Home({ data }: PageProps<Article[] | null>) {
         <div>
           <div class="grid gap-3 content-center">
             {data?.map((article) => (
-              <div key={article.title} class="flex gap-2 items-center">
-                <div class="text-xs flex-shrink-0">
+              <div key={article.title} class="grid gap-2 grid-cols-6 items-center">
+                <div class="text-xs col-span-1">
                   {article.published_at.match(/\d+-\d+-\d+/)}
                 </div>
-                <div class="flex-grow truncate">
+                <div class="truncate col-span-5">
                   <a href={article.path}>{article.title}</a>
                 </div>
               </div>
