@@ -16,7 +16,8 @@ interface Data {
 
 export const handler: Handlers<Data> = {
   async GET(_req, ctx) {
-    const content = await Deno.readTextFile("./posts/hello.md");
+    const { post } = ctx.params;
+    const content = await Deno.readTextFile(`./posts/${post}`);
     const file = await unified()
       .use(remarkParse)
       .use(remarkFrontmatter, { type: "yaml", marker: "-" })
