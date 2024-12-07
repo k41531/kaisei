@@ -4,6 +4,7 @@ import Layout from "../components/layout.tsx";
 import { UnifiedPostRepository } from "../repositries/post-repository.ts";
 import InfoRow from "../components/atoms/InfoRow.tsx";
 import ProjectCard from "../components/atoms/ProjectCard.tsx";
+import ArticleList from "../components/atoms/ArticleList.tsx";
 
 interface Article {
   title: string;
@@ -41,20 +42,7 @@ export default function Home({ data }: PageProps<Article[] | null>) {
         </div>
       </SectionCard>
       <SectionCard title="New articles">
-        <div>
-          <div class="grid gap-3 content-center">
-            {data?.map((article) => (
-              <div key={article.title} class="grid gap-2 grid-cols-6 items-center">
-                <div class="text-xs col-span-1">
-                  {article.published_at.match(/\d+-\d+-\d+/)}
-                </div>
-                <div class="truncate col-span-5">
-                  <a href={article.path}>{article.title}</a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+          <ArticleList articles={data} />
       </SectionCard>
       <SectionCard title="Projects">
         <div class="grid grid-cols-4 gap-4 mt-4">
