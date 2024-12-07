@@ -1,5 +1,5 @@
 ---
-title: "Markddown Sample"
+title: "Markdown Sample"
 emoji: "📝"
 type: "tech"
 topics:
@@ -85,7 +85,7 @@ _You **can** combine them_
 ```
 ![GitHub Logo](/logo.svg)
 [GitHub](http://github.com)
-```
+
 ## Blockquotes
 
 ```markdown
