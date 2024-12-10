@@ -1,5 +1,5 @@
 ---
-title: "The Anonymity of the Dark Web: A Survey"
+title: "The Anonymity of the Dark Web: A Survey 01"
 emoji: 📝
 topics:
   - markdown
@@ -10,7 +10,7 @@ tags:
 
 # The Anonymity of the Dark Web: A Survey #01
 This is my personal note about the paper introduction.
-https://arxiv.org/abs/2405.03644
+https://www.researchgate.net/publication/359421382_The_Anonymity_of_the_Dark_Web_A_Survey
 
 ## Introduce
 I'm interested in this paper and want to detail reading, so I write split note.
