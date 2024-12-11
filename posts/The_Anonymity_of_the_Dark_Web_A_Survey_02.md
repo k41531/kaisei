@@ -33,31 +33,31 @@ Background information on the attack’s taxonomy in the dark web.
 - Evers et al. presented a thirteen-year attack survey that classifies 84 attacks.
 	- Thirteen years of Tor attacks
 		- https://github.com/Attacks-on-Tor/Attacks-on-Tor
-- Saleh et al. [8] presented a literature survey that deals with classification, quantification, and comparative analysis of research work on Tor. 
+- Saleh et al.  presented a literature survey that deals with classification, quantification, and comparative analysis of research work on Tor. 
 	- Shedding light on the dark corners of the internet: A survey of Tor research
 		- http://dx.doi.org/10.1016/j.jnca.2018.04.002
-- Cambiaso et al. [12] analyzed the Tor attacks and categorized them as per the target of the attacker client, server, network, and generic attacks.
+- Cambiaso et al.  analyzed the Tor attacks and categorized them as per the target of the attacker client, server, network, and generic attacks.
 	- Darknet security: A categorization of attacks to the Tor network
 		- Italian Conf. Cybersecur., vol. 2315, 2019, pp. 1–12
-- Karunanayake et al. [17] introduced 50 Tor deanonymization attacks in 2020 into four categories. 
+- Karunanayake et al. introduced 50 Tor deanonymization attacks in 2020 into four categories. 
 	- ‘Anonymity with Tor: A survey on Tor attacks
 		- arXiv:2009.13018.
-- Sulaiman [11] presented different types of unpopular Tor attacks.
+- Sulaiman  presented different types of unpopular Tor attacks.
 	- Attacking Tor through unpopular ports
 		- http://dx.doi.org/10.1109/ICDCSW.2013.29
 - Sun et al. [20] discussed the raptor attacks which the autonomous system can launch to deanonymize the user.
 	- Raptor: Routing attacks on privacy in Tor
 		- 24th USENIX Secur. Symp., 2015, pp. 271–286
-- Barbera et al. [21] discussed the methodology, accessing the resources, and effect of cell flood attacks on the Tor network.
+- Barbera et al.  discussed the methodology, accessing the resources, and effect of cell flood attacks on the Tor network.
 	-  CellFlood: Attacking tor onion routers on the cheap
 		- http://dx.doi.org/10.1007/978-3-642-40203-6_37
-- Casenove and Miraglia [22] analyzed the botnet’s infrastructure and how the botmasters use them in the Tor network.
+- Casenove and Miraglia analyzed the botnet’s infrastructure and how the botmasters use them in the Tor network.
 	- Botnet over Tor: The illusion of hiding
 		- http://dx.doi.org/10.1109/CYCON.2014.6916408
-- Kaur and Randhawa [9] also mentioned 11 Tor attacks in heir work but was unable to provide any attack categorization in the network.
+- Kaur and Randhawa also mentioned 11 Tor attacks in heir work but was unable to provide any attack categorization in the network.
 	- Dark web: A web of crimes
 		- http://dx.doi.org/10.1007/s11277-020-07143-2
-- Basyoni et al. [23] examined traffic analysis attacks from the perspective of threat models and the practicality of these attacks in real-time. 
+- Basyoni et al.  examined traffic analysis attacks from the perspective of threat models and the practicality of these attacks in real-time. 
 	- Traffic analysis attacks on Tor: A survey
 		- http://dx.doi.org/10.1109/ICIoT48696.2020.9089497
 
