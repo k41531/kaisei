@@ -1,4 +1,4 @@
-import type { Handlers, PageProps } from "$fresh/server.ts";
+import type { PageProps } from "fresh";
 import { CSS } from "$gfm/mod.ts";
 import { unified } from "https://esm.sh/unified@11.0.4";
 import remarkParse from "https://esm.sh/remark-parse@11.0.0";
@@ -8,6 +8,7 @@ import rehypeStringify from "https://esm.sh/rehype-stringify@10.0.0";
 import remarkFrontmatter from "https://esm.sh/remark-frontmatter@5.0.0";
 import extractFrontmatter from "../../utils/frontmatter-extracter.ts";
 import Layout from "../../components/layout.tsx";
+import { Handlers } from "fresh/compat";
 
 interface Data {
   content: string;
@@ -15,7 +16,7 @@ interface Data {
 }
 
 export const handler: Handlers<Data> = {
-  async GET(_req, ctx) {
+  async GET(ctx) {
     const { post } = ctx.params;
     const content = await Deno.readTextFile(`./posts/${post}`);
     const file = await unified()

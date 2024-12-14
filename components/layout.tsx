@@ -1,6 +1,6 @@
 // layout.tsx
 import type { ComponentChildren } from "preact";
-import { Head } from "$fresh/runtime.ts";
+import { Head } from "fresh/runtime";
 import Header from "./organisms/header.tsx";
 
 interface LayoutProps {

@@ -1,10 +1,11 @@
-import type { Handlers, PageProps } from "$fresh/server.ts";
+import type { PageProps } from "fresh";
 import SectionCard from "../components/atoms/SectionCard.tsx";
 import Layout from "../components/layout.tsx";
 import { UnifiedPostRepository } from "../repositries/post-repository.ts";
 import InfoRow from "../components/atoms/InfoRow.tsx";
 import ProjectCard from "../components/atoms/ProjectCard.tsx";
 import ArticleList from "../components/atoms/ArticleList.tsx";
+import { Handlers } from "fresh/compat";
 
 interface Article {
   title: string;
@@ -13,7 +14,7 @@ interface Article {
 }
 
 export const handler: Handlers<Article[] | null> = {
-  async GET(_, ctx) {
+  async GET(ctx) {
     const postRepo = new UnifiedPostRepository();
     const posts = await postRepo.getPostsLimited(10);
     return ctx.render(posts);
@@ -42,7 +43,7 @@ export default function Home({ data }: PageProps<Article[] | null>) {
         </div>
       </SectionCard>
       <SectionCard title="New articles">
-          <ArticleList articles={data} />
+        <ArticleList articles={data} />
       </SectionCard>
       <SectionCard title="Projects">
         <div class="grid grid-cols-4 gap-4 mt-4">
