@@ -1,5 +1,5 @@
 import type { PageProps } from "fresh";
-import { CSS } from "$gfm/mod.ts";
+import { CSS } from "gfm";
 import { unified } from "https://esm.sh/unified@11.0.4";
 import remarkParse from "https://esm.sh/remark-parse@11.0.0";
 import remarkGfm from "https://esm.sh/remark-gfm@4.0.0";
