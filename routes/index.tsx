@@ -3,11 +3,11 @@ import Layout from "../components/layout.tsx";
 import { UnifiedPostRepository } from "../repositries/post-repository.ts";
 import InfoRow from "../components/atoms/InfoRow.tsx";
 import ProjectCard from "../components/atoms/ProjectCard.tsx";
-import ArticleList from "../components/atoms/ArticleList.tsx";
+import PostList from "../components/atoms/PostList.tsx";
 import { createDefine, page } from "fresh";
-import type Article from "../models/article.ts";
+import type Post from "../models/post.ts";
 
-const define = createDefine<Article[]>();
+const define = createDefine<Post[]>();
 
 export const handler = define.handlers({
   async GET() {
@@ -38,8 +38,8 @@ export default define.page<typeof handler>(function Home({ data }) {
           />
         </div>
       </SectionCard>
-      <SectionCard title="New articles">
-        <ArticleList articles={data} />
+      <SectionCard title="New posts">
+        <PostList posts={data} />
       </SectionCard>
       <SectionCard title="Projects">
         <div class="grid grid-cols-4 gap-4 mt-4">

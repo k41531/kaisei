@@ -6,7 +6,7 @@ export default function Header() {
           <a href="/">Home</a>
         </h1>
         <div class="text-md">
-          <a href="/articles">Articles</a>
+          <a href="/posts">Posts</a>
         </div>
       </div>
       <hr class="mb-1 border-foreground" />

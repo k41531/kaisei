@@ -1,7 +1,7 @@
-interface Article {
+interface Post {
   title: string;
   path: string;
   published_at: string;
 }
 
-export default Article;
+export default Post;
