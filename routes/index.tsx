@@ -14,7 +14,7 @@ interface Article {
   published_at: string;
 }
 
-export const handler =  createDefine().handlers ({
+export const handler = createDefine().handlers({
   async GET(ctx) {
     const postRepo = new UnifiedPostRepository();
     const posts = await postRepo.getPostsLimited(10);

@@ -9,7 +9,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard(props: ProjectCardProps) {
   return (
-    <a href={props.href} alt={props.alt}>
+    <a href={props.href}>
       <div class="rounded-md aspect-1/1">
         <div class="grid grid-rows-5">
           <div class="row-span-2 p-2">

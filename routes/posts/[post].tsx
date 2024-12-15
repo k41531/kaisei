@@ -16,7 +16,7 @@ interface Data {
   frontmatter: Record<string, unknown>;
 }
 
-export const handler =  createDefine().handlers ({
+export const handler = createDefine().handlers({
   async GET(ctx) {
     const { post } = ctx.params;
     const content = await Deno.readTextFile(`./posts/${post}`);

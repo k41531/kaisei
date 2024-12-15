@@ -7,7 +7,7 @@ import { UnifiedPostRepository } from "../repositries/post-repository.ts";
 import { createDefine } from "fresh";
 import { page } from "fresh";
 
-export const handler =  createDefine().handlers ({
+export const handler = createDefine().handlers({
   async GET(ctx) {
     const postRepo = new UnifiedPostRepository();
 
