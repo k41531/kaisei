@@ -10,14 +10,14 @@ interface ProjectCardProps {
 export default function ProjectCard(props: ProjectCardProps) {
   return (
     <a href={props.href}>
-      <div class="rounded-md aspect-1/1">
-        <div class="grid grid-rows-5">
+      <div class="rounded-md aspect-square">
+        <div class="grid grid-rows">
           <div class="row-span-2 p-2">
             <p>{props.title}</p>
             <p class="text-xs whitespace-nowrap">{props.subtitle}</p>
           </div>
           <img
-            class="row-span-2 h-full mx-auto"
+            class="row-span-2 h-24 mx-auto"
             src={props.imgSrc}
             alt={props.imgAlt}
           />

@@ -1,3 +1,7 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
 * {
   --color-canvas-subtle: #252525;
   --color-canvas-default: #444444;
@@ -5,4 +9,3 @@
 .markdown-body {
   overflow: auto;
 }
-.markdown-body li {}
