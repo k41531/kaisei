@@ -5,7 +5,8 @@ import { UnifiedPostRepository } from "../repositries/post-repository.ts";
 import InfoRow from "../components/atoms/InfoRow.tsx";
 import ProjectCard from "../components/atoms/ProjectCard.tsx";
 import ArticleList from "../components/atoms/ArticleList.tsx";
-import { Handlers } from "fresh/compat";
+import { page } from "fresh";
+import { createDefine } from "fresh";
 
 interface Article {
   title: string;
@@ -13,13 +14,13 @@ interface Article {
   published_at: string;
 }
 
-export const handler: Handlers<Article[] | null> = {
+export const handler =  createDefine().handlers ({
   async GET(ctx) {
     const postRepo = new UnifiedPostRepository();
     const posts = await postRepo.getPostsLimited(10);
-    return ctx.render(posts);
+    return page(posts);
   },
-};
+});
 
 export default function Home({ data }: PageProps<Article[] | null>) {
   return (

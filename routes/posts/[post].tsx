@@ -8,14 +8,15 @@ import rehypeStringify from "https://esm.sh/rehype-stringify@10.0.0";
 import remarkFrontmatter from "https://esm.sh/remark-frontmatter@5.0.0";
 import extractFrontmatter from "../../utils/frontmatter-extracter.ts";
 import Layout from "../../components/layout.tsx";
-import { Handlers } from "fresh/compat";
+import { page } from "fresh";
+import { createDefine } from "fresh";
 
 interface Data {
   content: string;
   frontmatter: Record<string, unknown>;
 }
 
-export const handler: Handlers<Data> = {
+export const handler =  createDefine().handlers ({
   async GET(ctx) {
     const { post } = ctx.params;
     const content = await Deno.readTextFile(`./posts/${post}`);
@@ -28,13 +29,12 @@ export const handler: Handlers<Data> = {
       .use(rehypeStringify)
       .process(content);
     const frontmatter = file.data.frontmatter as Record<string, unknown>;
-    return ctx.render({
-      ...ctx.state,
+    return page({
       content: String(file),
       frontmatter: frontmatter,
     });
   },
-};
+});
 
 export default function GreetPage(props: PageProps<Data>) {
   const { content } = props.data;

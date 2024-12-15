@@ -4,17 +4,18 @@ import SectionCard from "../components/atoms/SectionCard.tsx";
 import Layout from "../components/layout.tsx";
 import type Article from "../models/article.ts";
 import { UnifiedPostRepository } from "../repositries/post-repository.ts";
-import { Handlers } from "fresh/compat";
+import { createDefine } from "fresh";
+import { page } from "fresh";
 
-export const handler: Handlers<Article[] | null> = {
+export const handler =  createDefine().handlers ({
   async GET(ctx) {
     const postRepo = new UnifiedPostRepository();
 
     const posts = await postRepo.getPosts();
 
-    return ctx.render(posts);
+    return page(posts);
   },
-};
+});
 
 export default function Articles({ data }: PageProps<Article[] | null>) {
   return (
