@@ -1,4 +1,3 @@
-import type { PageProps } from "fresh";
 import { CSS } from "gfm";
 import { unified } from "https://esm.sh/unified@11.0.4";
 import remarkParse from "https://esm.sh/remark-parse@11.0.0";
@@ -8,15 +7,16 @@ import rehypeStringify from "https://esm.sh/rehype-stringify@10.0.0";
 import remarkFrontmatter from "https://esm.sh/remark-frontmatter@5.0.0";
 import extractFrontmatter from "../../utils/frontmatter-extracter.ts";
 import Layout from "../../components/layout.tsx";
-import { page } from "fresh";
-import { createDefine } from "fresh";
+import { createDefine, page } from "fresh";
 
-interface Data {
+interface State {
   content: string;
   frontmatter: Record<string, unknown>;
 }
 
-export const handler = createDefine().handlers({
+const define = createDefine<State>();
+
+export const handler = define.handlers({
   async GET(ctx) {
     const { post } = ctx.params;
     const content = await Deno.readTextFile(`./posts/${post}`);
@@ -36,9 +36,8 @@ export const handler = createDefine().handlers({
   },
 });
 
-export default function GreetPage(props: PageProps<Data>) {
+export default define.page<typeof handler>(function GreetPage(props) {
   const { content } = props.data;
-  const { frontmatter } = props.data;
   return (
     <Layout title="Post" description="The homepage of Kaisei, an engineer.">
       <div
@@ -49,4 +48,4 @@ export default function GreetPage(props: PageProps<Data>) {
       <style jsx>{CSS}</style>
     </Layout>
   );
-}
+});

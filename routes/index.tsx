@@ -1,28 +1,23 @@
-import type { PageProps } from "fresh";
 import SectionCard from "../components/atoms/SectionCard.tsx";
 import Layout from "../components/layout.tsx";
 import { UnifiedPostRepository } from "../repositries/post-repository.ts";
 import InfoRow from "../components/atoms/InfoRow.tsx";
 import ProjectCard from "../components/atoms/ProjectCard.tsx";
 import ArticleList from "../components/atoms/ArticleList.tsx";
-import { page } from "fresh";
-import { createDefine } from "fresh";
+import { createDefine, page } from "fresh";
+import type Article from "../models/article.ts";
 
-interface Article {
-  title: string;
-  path: string;
-  published_at: string;
-}
+const define = createDefine<Article[]>();
 
-export const handler = createDefine().handlers({
-  async GET(ctx) {
+export const handler = define.handlers({
+  async GET() {
     const postRepo = new UnifiedPostRepository();
     const posts = await postRepo.getPostsLimited(10);
     return page(posts);
   },
 });
 
-export default function Home({ data }: PageProps<Article[] | null>) {
+export default define.page<typeof handler>(function Home({ data }) {
   return (
     <Layout title="Home" description="The homepage of Kaisei, an engineer.">
       <SectionCard title="About me">
@@ -76,4 +71,4 @@ export default function Home({ data }: PageProps<Article[] | null>) {
       </SectionCard>
     </Layout>
   );
-}
+});
