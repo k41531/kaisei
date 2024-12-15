@@ -1,4 +1,4 @@
-import Article from "../../models/article.ts";
+import type Article from "../../models/article.ts";
 
 interface ArticleListProps {
   articles: Article[] | null;

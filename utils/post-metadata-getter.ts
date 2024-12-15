@@ -1,7 +1,7 @@
-import { unified } from "https://esm.sh/unified@11.0.4";
-import remarkParse from "https://esm.sh/remark-parse@11.0.0";
-import remarkFrontmatter from "https://esm.sh/remark-frontmatter@5.0.0";
-import remarkStringfy from "https://esm.sh/remark-stringify@11.0.0";
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import remarkFrontmatter from "remark-frontmatter";
+import remarkStringfy from "remark-stringify";
 import extractFrontmatter from "../utils/frontmatter-extracter.ts";
 import type Article from "../models/article.ts";
 

@@ -1,10 +1,10 @@
 import { CSS } from "gfm";
-import { unified } from "https://esm.sh/unified@11.0.4";
-import remarkParse from "https://esm.sh/remark-parse@11.0.0";
-import remarkGfm from "https://esm.sh/remark-gfm@4.0.0";
-import remarkRehype from "https://esm.sh/remark-rehype@11.0.0";
-import rehypeStringify from "https://esm.sh/rehype-stringify@10.0.0";
-import remarkFrontmatter from "https://esm.sh/remark-frontmatter@5.0.0";
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import remarkGfm from "remark-gfm";
+import remarkRehype from "remark-rehype";
+import remarkFrontmatter from "remark-frontmatter";
+import rehypeStringify from "rehype-stringify";
 import extractFrontmatter from "../../utils/frontmatter-extracter.ts";
 import Layout from "../../components/layout.tsx";
 import { createDefine, page } from "fresh";
