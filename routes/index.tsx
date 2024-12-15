@@ -1,26 +1,23 @@
-import type { Handlers, PageProps } from "$fresh/server.ts";
 import SectionCard from "../components/atoms/SectionCard.tsx";
 import Layout from "../components/layout.tsx";
 import { UnifiedPostRepository } from "../repositries/post-repository.ts";
 import InfoRow from "../components/atoms/InfoRow.tsx";
 import ProjectCard from "../components/atoms/ProjectCard.tsx";
-import ArticleList from "../components/atoms/ArticleList.tsx";
+import PostList from "../components/atoms/PostList.tsx";
+import { createDefine, page } from "fresh";
+import type Post from "../models/post.ts";
 
-interface Article {
-  title: string;
-  path: string;
-  published_at: string;
-}
+const define = createDefine<Post[]>();
 
-export const handler: Handlers<Article[] | null> = {
-  async GET(_, ctx) {
+export const handler = define.handlers({
+  async GET() {
     const postRepo = new UnifiedPostRepository();
     const posts = await postRepo.getPostsLimited(10);
-    return ctx.render(posts);
+    return page(posts);
   },
-};
+});
 
-export default function Home({ data }: PageProps<Article[] | null>) {
+export default define.page<typeof handler>(function Home({ data }) {
   return (
     <Layout title="Home" description="The homepage of Kaisei, an engineer.">
       <SectionCard title="About me">
@@ -41,8 +38,8 @@ export default function Home({ data }: PageProps<Article[] | null>) {
           />
         </div>
       </SectionCard>
-      <SectionCard title="New articles">
-          <ArticleList articles={data} />
+      <SectionCard title="New posts">
+        <PostList posts={data} />
       </SectionCard>
       <SectionCard title="Projects">
         <div class="grid grid-cols-4 gap-4 mt-4">
@@ -74,4 +71,4 @@ export default function Home({ data }: PageProps<Article[] | null>) {
       </SectionCard>
     </Layout>
   );
-}
+});

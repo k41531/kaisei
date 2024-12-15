@@ -1,37 +1,37 @@
-import type Article from "../models/article.ts";
+import type Post from "../models/post.ts";
 import getPostMetadata from "../utils/post-metadata-getter.ts";
 
 export interface PostRepository {
-  getPosts(): Promise<Article[]>;
-  getPostsLimited(limit: number): Promise<Article[]>;
+  getPosts(): Promise<Post[]>;
+  getPostsLimited(limit: number): Promise<Post[]>;
 }
 
 abstract class BasePostRepository implements PostRepository {
-  abstract getPosts(): Promise<Article[]>;
-  abstract getPostsLimited(limit: number): Promise<Article[]>;
+  abstract getPosts(): Promise<Post[]>;
+  abstract getPostsLimited(limit: number): Promise<Post[]>;
 }
 
 export class ZennPostRepository extends BasePostRepository {
   private readonly apiUrl =
     "https://zenn.dev/api/articles?username=k41531&order=latest";
 
-  getPosts(): Promise<Article[]> {
+  getPosts(): Promise<Post[]> {
     return this.fetchArticles(this.apiUrl);
   }
 
-  getPostsLimited(limit: number): Promise<Article[]> {
+  getPostsLimited(limit: number): Promise<Post[]> {
     const limitedApiUrl = `${this.apiUrl}&count=${limit}`;
     return this.fetchArticles(limitedApiUrl);
   }
 
-  private async fetchArticles(url: string): Promise<Article[]> {
+  private async fetchArticles(url: string): Promise<Post[]> {
     try {
       const response = await fetch(url);
       if (!response.ok) {
         throw new Error(`Failed to fetch articles, status: ${response.status}`);
       }
       const { articles } = await response.json();
-      return articles.map((article: Article) => ({
+      return articles.map((article: Post) => ({
         title: article.title,
         published_at: article.published_at,
         path: `https://zenn.dev${article.path}`,
@@ -46,18 +46,18 @@ export class ZennPostRepository extends BasePostRepository {
 export class LocalPostRepository extends BasePostRepository {
   private readonly postsDirectory = "./posts";
 
-  getPosts(): Promise<Article[]> {
+  getPosts(): Promise<Post[]> {
     return this.fetchLocalPosts();
   }
 
-  getPostsLimited(limit: number): Promise<Article[]> {
+  getPostsLimited(limit: number): Promise<Post[]> {
     return this.fetchLocalPosts(limit);
   }
 
-  private async fetchLocalPosts(limit?: number): Promise<Article[]> {
+  private async fetchLocalPosts(limit?: number): Promise<Post[]> {
     try {
       const files = Deno.readDir(this.postsDirectory);
-      const posts: Article[] = [];
+      const posts: Post[] = [];
       let count = 0;
       for await (const file of files) {
         if (limit !== undefined && count >= limit) break;
@@ -84,7 +84,7 @@ export class UnifiedPostRepository implements PostRepository {
     this.zennRepo = new ZennPostRepository();
   }
 
-  async getPosts(): Promise<Article[]> {
+  async getPosts(): Promise<Post[]> {
     const localPosts = await this.localRepo.getPosts();
     const zennPosts = await this.zennRepo.getPosts();
     const posts = [...localPosts, ...zennPosts];
@@ -95,7 +95,7 @@ export class UnifiedPostRepository implements PostRepository {
     });
   }
 
-  async getPostsLimited(limit: number): Promise<Article[]> {
+  async getPostsLimited(limit: number): Promise<Post[]> {
     const localPosts = await this.localRepo.getPostsLimited(limit);
     const zennPosts = await this.zennRepo.getPostsLimited(limit);
     const posts = [...localPosts, ...zennPosts];

@@ -1,11 +1,10 @@
-import type { Options } from "$fresh/plugins/twind.ts";
-import { aspectRatio } from "@twind/aspect-ratio";
+import type { Config } from "tailwindcss";
 
 export default {
-  selfURL: import.meta.url,
-  plugins: {
-    aspect: aspectRatio,
-  },
+  content: [
+    "{routes,islands,components}/**/*.{ts,tsx}",
+  ],
+
   theme: {
     extend: {
       fontFamily: {
@@ -32,4 +31,4 @@ export default {
       },
     ],
   },
-} as Options;
+} satisfies Config;
