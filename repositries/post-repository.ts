@@ -65,7 +65,7 @@ export class LocalPostRepository extends BasePostRepository {
         posts.push(post);
       }
       posts.sort((a, b) => a.published_at < b.published_at ? 1:-1);
-      return posts.slice(0,limit ?? files.length);
+      return posts.slice(0,limit ?? posts.length);
     } catch (error) {
       console.error("Error reading local posts:", error);
       return [];
