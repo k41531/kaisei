@@ -58,16 +58,14 @@ export class LocalPostRepository extends BasePostRepository {
     try {
       const files = Deno.readDir(this.postsDirectory);
       const posts: Post[] = [];
-      let count = 0;
       for await (const file of files) {
-        if (limit !== undefined && count >= limit) break;
         const post = await getPostMetadata(
           `${this.postsDirectory}/${file.name}`,
         );
         posts.push(post);
-        count++;
       }
-      return posts;
+      posts.sort((a, b) => a.published_at < b.published_at ? 1:-1);
+      return posts.slice(0,limit ?? files.length);
     } catch (error) {
       console.error("Error reading local posts:", error);
       return [];
