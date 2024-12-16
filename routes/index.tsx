@@ -1,25 +1,26 @@
 import SectionCard from "../components/atoms/SectionCard.tsx";
-import Layout from "../components/layout.tsx";
 import { UnifiedPostRepository } from "../repositries/post-repository.ts";
 import InfoRow from "../components/atoms/InfoRow.tsx";
 import ProjectCard from "../components/atoms/ProjectCard.tsx";
 import PostList from "../components/atoms/PostList.tsx";
-import { createDefine, page } from "fresh";
-import type Post from "../models/post.ts";
-
-const define = createDefine<Post[]>();
+import { page } from "fresh";
+import { define } from "../utils/state.ts";
 
 export const handler = define.handlers({
-  async GET() {
+  async GET(ctx) {
     const postRepo = new UnifiedPostRepository();
     const posts = await postRepo.getPostsLimited(10);
+    
+    ctx.state.title = "Home";
+    ctx.state.description = "The homepage of Kaisei, an engineer.";
+
     return page(posts);
   },
 });
 
-export default define.page<typeof handler>(function Home({ data }) {
+export default define.page<typeof handler>(function Home({data}) {
   return (
-    <Layout title="Home" description="The homepage of Kaisei, an engineer.">
+    <>
       <SectionCard title="About me">
         <div class="grid">
           <InfoRow label="Name" value="Kaisei" />
@@ -69,6 +70,6 @@ export default define.page<typeof handler>(function Home({ data }) {
           />
         </div>
       </SectionCard>
-    </Layout>
+    </>
   );
 });

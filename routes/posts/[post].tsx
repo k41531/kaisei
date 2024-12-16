@@ -6,15 +6,8 @@ import remarkRehype from "remark-rehype";
 import remarkFrontmatter from "remark-frontmatter";
 import rehypeStringify from "rehype-stringify";
 import extractFrontmatter from "../../utils/frontmatter-extracter.ts";
-import Layout from "../../components/layout.tsx";
-import { createDefine, page } from "fresh";
-
-interface State {
-  content: string;
-  frontmatter: Record<string, unknown>;
-}
-
-const define = createDefine<State>();
+import { page } from "fresh";
+import { define } from "../../utils/state.ts";
 
 export const handler = define.handlers({
   async GET(ctx) {
@@ -29,6 +22,10 @@ export const handler = define.handlers({
       .use(rehypeStringify)
       .process(content);
     const frontmatter = file.data.frontmatter as Record<string, unknown>;
+
+    ctx.state.title = frontmatter.title as string;
+    ctx.state.description = frontmatter.description as string;
+
     return page({
       content: String(file),
       frontmatter: frontmatter,
@@ -39,13 +36,13 @@ export const handler = define.handlers({
 export default define.page<typeof handler>(function GreetPage(props) {
   const { content } = props.data;
   return (
-    <Layout title="Post" description="The homepage of Kaisei, an engineer.">
+    <>
       <div
         className="markdown-body"
         // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
         dangerouslySetInnerHTML={{ __html: content }}
       />
       <style jsx>{CSS}</style>
-    </Layout>
+    </>
   );
 });

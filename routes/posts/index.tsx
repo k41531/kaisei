@@ -1,17 +1,16 @@
 import PostList from "../../components/atoms/PostList.tsx";
 import SectionCard from "../../components/atoms/SectionCard.tsx";
-import Layout from "../../components/layout.tsx";
-import type Post from "../../models/post.ts";
 import { UnifiedPostRepository } from "../../repositries/post-repository.ts";
-import { createDefine, page } from "fresh";
-
-const define = createDefine<Post[]>();
+import { page } from "fresh";
+import { define } from "../../utils/state.ts";
 
 export const handler = define.handlers({
-  async GET() {
+  async GET(ctx) {
     const postRepo = new UnifiedPostRepository();
-
     const posts = await postRepo.getPosts();
+    
+    ctx.state.title = "Posts";
+    ctx.state.description = "The homepage of Kaisei, an engineer.";
 
     return page(posts);
   },
@@ -19,10 +18,8 @@ export const handler = define.handlers({
 
 export default define.page<typeof handler>(function Home({ data }) {
   return (
-    <Layout title="Posts" description="The homepage of Kaisei, an engineer.">
       <SectionCard title="All posts">
         <PostList posts={data} />
       </SectionCard>
-    </Layout>
   );
 });
