@@ -14,6 +14,7 @@ export default function Layout({ children, title, description }: LayoutProps) {
       <head>
         <title>{`Kaisei's ${title}`}</title>
         <meta name="description" content={description} />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" href="/styles.css" />
       </head>
       <Header />
