@@ -1,5 +1,8 @@
 {
-  "tasks": { "start": "deno run -A --watch=static/,routes/ dev.ts" },
+  "tasks": {
+    "start": "deno run -A --watch=static/,routes/ dev.ts",
+    "build": "deno run -A dev.ts build"
+  },
   "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" },
   "imports": {
     "@std/yaml": "jsr:@std/yaml@^1.0.5",
