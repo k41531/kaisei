@@ -3,14 +3,14 @@ title: "Cross-Site Scripting Attacks and DefensiveTechniques: A Comprehensive Su
 emoji: 📝
 topics:
   - markdown
-published_at: 2024-12-19 22:30
+published_at: 2024-12-20 22:30
 tags:
   - paper-note
 ---
 
 # Cross-Site Scripting Attacks and Defensive Techniques: A Comprehensive Survey
 
-This is my personal note about the paper introduction.
+This is my personal note about the paper.
 https://www.scirp.org/journal/paperinformation?paperid=119069
 
 ## Abstract
