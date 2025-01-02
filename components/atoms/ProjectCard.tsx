@@ -14,10 +14,10 @@ export default function ProjectCard(props: ProjectCardProps) {
         <div class="grid grid-rows">
           <div class="row-span-2 p-2">
             <p>{props.title}</p>
-            <p class="text-xs whitespace-nowrap">{props.subtitle}</p>
+            <p class="text-xs whitespace-nowrap hidden sm:block">{props.subtitle}</p>
           </div>
           <img
-            class="row-span-2 h-24 mx-auto"
+            class="row-span-2 h-16 mx-auto"
             src={props.imgSrc}
             alt={props.imgAlt}
           />
