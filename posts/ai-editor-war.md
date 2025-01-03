@@ -3,7 +3,7 @@ aliases: "AI Editor War"
 title: "AI Editor War"
 tags: murmur
 created: 2025-01-03 22:14
-updated: 2025-01-03 23:05
+updated: 2025-01-03 23:11
 published_at: 2025-01-03 23:10
 ---
 # AI Editor War
@@ -15,3 +15,8 @@ The only AI development support tool I was familiar with before was Cursor. When
 On the other hand, there are other tools like Cline and Cody, both available as VSCode extensions. Cline recommends using Claude 3.5 Sonnet, and its README mentions advanced features like "Computer Use" and "Model Context Protocol," suggesting it’s a versatile tool. Cody seems similar to Cline, and I’ve read personal blog posts praising its cost-effectiveness. However, I can’t really tell how they differ. On X, I noticed that some people use both, which implies there are functional differences between them.
 
 In any case, it seems like it’s hard to fully grasp their differences without heavy usage. That said, if you’re willing to pay, GitHub Copilot, at $100 per year, seems like the most practical option to me.
+
+[GitHub Copilot](https://github.com/features/copilot)
+[Cursor](https://www.cursor.com/)
+[cline](https://github.com/cline/cline)
+[cody](https://github.com/sourcegraph/cody)
