@@ -1,4 +1,3 @@
-import { CSS } from "gfm";
 import { unified } from "unified";
 import remarkParse from "remark-parse";
 import remarkGfm from "remark-gfm";
@@ -42,7 +41,6 @@ export default define.page<typeof handler>(function GreetPage(props) {
         // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
         dangerouslySetInnerHTML={{ __html: content }}
       />
-      <style jsx>{CSS}</style>
     </>
   );
 });
