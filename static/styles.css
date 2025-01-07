@@ -2,6 +2,18 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@font-face {
+  font-family: 'SourceSerif4';
+  src: url('/fonts/SourceSerif4-VariableFont_opsz,wght.ttf');
+}
+
+@layer base {
+  html {
+    font-family: "SourceSerif4";
+    font-weight: 300;
+  }
+}
+
 * {
   --color-canvas-subtle: #252525;
   --color-canvas-default: #444444;
@@ -12,6 +24,10 @@
 }
 
 .markdown-body {
+  :first-child {
+    margin-top: 0 !important;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     margin-top: 1.5em;
     margin-bottom: 0.5em;
@@ -34,6 +50,9 @@
   }
   h6 {
     font-size: 0.75em;
+  }
+  p {
+    font-size: 18px;
   }
 
   p, blockquote ul, ol, dl, table, pre, details {
