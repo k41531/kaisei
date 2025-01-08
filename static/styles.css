@@ -7,10 +7,19 @@
   src: url('/fonts/SourceSerif4-VariableFont_opsz,wght.ttf');
 }
 
+@font-face {
+  font-family: 'SourceSerif4Italic';
+  src: url('/fonts/SourceSerif4-Italic-VariableFont_opsz,wght.ttf');
+}
+
 @layer base {
   html {
     font-family: "SourceSerif4";
     font-weight: 300;
+  }
+
+  em, i {
+    font-family: 'SourceSerif4Italic';
   }
 }
 
@@ -89,4 +98,5 @@
     color: #81a1c1;
     text-decoration: underline;
   }
+
 }
