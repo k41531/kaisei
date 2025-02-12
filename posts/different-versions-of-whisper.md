@@ -3,8 +3,8 @@ aliases: "Different Versions of Whisper"
 title: "Different Versions of Whisper"
 tags: murmur
 created: "2025-02-12 21:17"
-updated: "2025-02-12 21:17"
-published_at: "2025-02-12 21:17"
+updated: "2025-02-12 21:39"
+published_at: "2025-02-12 21:39"
 ---
 
 # Different Versions of Whisper
