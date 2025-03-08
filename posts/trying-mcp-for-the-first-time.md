@@ -1,10 +1,10 @@
 ---
-aliases: "Trying MCP for the First Time"
-title: "Trying MCP for the First Time"
+aliases: Trying MCP for the First Time
+created: 2025-03-08 22:34
+published_at: 2025-03-08 22:41
 tags: murmur
-created: "2025-03-08 22:34"
-updated: "2025-03-08 22:34"
-published_at: "2025-03-08 22:34"
+title: Trying MCP for the First Time
+updated: 2025-03-08 22:34
 ---
 
 I tried MCP for the first time. I don’t know the details, but I think this protocol is going to become more important.
