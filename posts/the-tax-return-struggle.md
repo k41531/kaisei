@@ -1,10 +1,10 @@
 ---
-aliases: "The Tax Return Struggle"
-title: "The Tax Return Struggle"
+aliases: The Tax Return Struggle
+created: 2025-03-10 22:42
+published_at: 2025-03-10 22:45
 tags: murmur
-created: "2025-03-10 22:42"
-updated: "2025-03-10 22:42"
-published_at: "2025-03-10 22:42"
+title: The Tax Return Struggle
+updated: 2025-03-10 22:42
 ---
 
 # The Tax Return Struggle
