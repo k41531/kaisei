@@ -5,6 +5,25 @@ import subprocess
 import frontmatter
 import datetime
 import pytz
+import yaml
+
+# カスタムダンプ処理を追加
+def custom_dump(file_path, post):
+    # フロントマターの内容を文字列として構築
+    frontmatter_content = "---\n"
+    
+    # 各キーと値をフォーマット
+    for key, value in post.metadata.items():
+        frontmatter_content += f'{key}: "{value}"\n'
+    
+    frontmatter_content += "---\n"
+    
+    # 本文内容
+    content = post.content.strip() if post.content else ""
+    
+    # ファイルに書き込み
+    with open(file_path, 'w', encoding='utf-8') as f:
+        f.write(frontmatter_content + "\n" + content)
 
 # Get the current time in JST
 def get_current_time_jst():
@@ -55,8 +74,7 @@ def update_frontmatter_timestamps():
             if 'updated' not in post:
                 post['updated'] = current_time
                 
-            with open(file_path, 'wb') as f:
-                frontmatter.dump(post, f)
+            custom_dump(file_path, post)
             print(f"Updated published_at in {file_path}")
     
     # Update updated for modified files
@@ -65,8 +83,7 @@ def update_frontmatter_timestamps():
             post = frontmatter.load(file_path)
             post['updated'] = current_time
             
-            with open(file_path, 'wb') as f:
-                frontmatter.dump(post, f)
+            custom_dump(file_path, post)
             print(f"Updated 'updated' timestamp in {file_path}")
 
 if __name__ == "__main__":
