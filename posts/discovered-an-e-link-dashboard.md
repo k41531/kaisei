@@ -1,10 +1,10 @@
 ---
 aliases: "Discovered an E-Ink Dashboard"
 title: "Discovered an E-Ink Dashboard"
-tags: murmur
+tags: "murmur"
 created: "2025-03-13 22:14"
 updated: "2025-03-13 22:14"
-published_at: "2025-03-13 22:14"
+published_at: "2025-03-14 23:34"
 ---
 
 # Discovered an E-Ink Dashboard
