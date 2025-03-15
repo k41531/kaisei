@@ -1,11 +1,12 @@
 ---
 aliases: "Gemma 3 Surprised Me"
 title: "Gemma 3 Surprised Me"
-tags: murmur
+tags: "murmur"
 created: "2025-03-15 23:04"
 updated: "2025-03-15 23:04"
-published_at: "2025-03-15 23:04"
+published_at: "2025-03-15 23:33"
 ---
+
 # Gemma 3 Surprised Me
 
 I was surprised by Gemma 3’s capabilities. I tried its 4-bit quantized 12B model through Ollama.
