@@ -2,9 +2,10 @@ import SectionCard from "../components/atoms/SectionCard.tsx";
 import { UnifiedPostRepository } from "../repositries/post-repository.ts";
 import InfoRow from "../components/atoms/InfoRow.tsx";
 import ProjectCard from "../components/atoms/ProjectCard.tsx";
-import PostList from "../components/atoms/PostList.tsx";
+// import PostList from "../components/atoms/PostList.tsx";
 import { page } from "fresh";
 import { define } from "../utils/state.ts";
+import PostList from "../islands/PostList.tsx";
 
 export const handler = define.handlers({
   async GET(ctx) {
@@ -40,7 +41,8 @@ export default define.page<typeof handler>(function Home({data}) {
         </div>
       </SectionCard>
       <SectionCard title="New posts">
-        <PostList posts={data} />
+        {/* <PostList posts={data} /> */}
+        <PostList limit={10} /> 
       </SectionCard>
       <SectionCard title="Projects">
         <div class="grid grid-cols-4 gap-4 mt-4">
