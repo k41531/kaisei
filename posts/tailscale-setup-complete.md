@@ -4,8 +4,9 @@ title: "Tailscale Setup Complete"
 tags: "murmur"
 created: "2025-03-20 22:53"
 updated: "2025-03-20 22:53"
-published_at: "2025-03-20 22:53"
+published_at: "2025-03-20 22:59"
 ---
+
 # Tailscale Setup Complete
 
 I set up Tailscale for my home VPN. I had wanted to do it for a while, and I finally did it!
