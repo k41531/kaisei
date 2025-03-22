@@ -4,8 +4,9 @@ title: "Trying Agent SDK"
 tags: "murmur"
 created: "2025-03-22 23:06"
 updated: "2025-03-22 23:06"
-published_at: "2025-03-22 23:06"
+published_at: "2025-03-22 23:14"
 ---
+
 # Trying Agent SDK
 
 I tried OpenAI's Agent SDK. It’s helpful because there are plenty of documents and examples.
