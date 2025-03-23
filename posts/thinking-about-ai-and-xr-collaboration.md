@@ -4,7 +4,7 @@ title: "Thinking About AI and XR Collaboration"
 tags: "murmur"
 created: "2025-03-23 22:18"
 updated: "2025-03-23 22:18"
-published_at: "2025-03-23 22:18"
+published_at: "2025-03-23 22:58"
 ---
 
 I'm thinking about the collaboration between AI and XR. Recently, voice detection and transcription have become high-quality and easy to use, so I want to use them for VR.
