@@ -4,8 +4,9 @@ title: "Experimenting with the Agent SDK"
 tags: "murmur"
 created: "2025-03-24 22:23"
 updated: "2025-03-24 22:23"
-published_at: "2025-03-24 22:23"
+published_at: "2025-03-24 22:37"
 ---
+
 # Experimenting with the Agent SDK
 
 The Agent SDK is difficult but interesting.
