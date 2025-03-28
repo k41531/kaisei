@@ -4,7 +4,7 @@ title: "Hi3DGen Blew My Mind"
 tags: "murmur"
 created: "2025-03-28 23:10"
 updated: "2025-03-28 23:10"
-published_at: "2025-03-28 23:10"
+published_at: "2025-03-28 23:13"
 ---
 
 # Hi3DGen Blew My Mind
