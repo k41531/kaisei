@@ -4,7 +4,7 @@ title: "MCP is Booming"
 tags: "murmur"
 created: "2025-04-06 23:22"
 updated: "2025-04-06 23:22"
-published_at: "2025-04-06 23:22"
+published_at: "2025-04-06 23:28"
 ---
 
 # MCP is Booming
