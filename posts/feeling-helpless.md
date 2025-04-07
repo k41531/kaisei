@@ -1,11 +1,10 @@
 ---
 aliases: "Feeling Helpless"
 title: "Feeling Helpless"
-tags:
-  - murmur
-created: 2025-04-07 22:07
-updated: 2025-04-07 22:07
-published_at: 2025-04-07 22:07
+tags: "['murmur']"
+created: "2025-04-07 22:07"
+updated: "2025-04-07 22:07"
+published_at: "2025-04-07 22:10"
 ---
 
 # Feeling Helpless
