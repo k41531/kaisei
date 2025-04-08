@@ -4,7 +4,7 @@ title: "Experimenting with Word Memory Methods"
 tags: "murmur"
 created: "2025-04-08 22:47"
 updated: "2025-04-08 22:47"
-published_at: "2025-04-08 22:47"
+published_at: "2025-04-08 22:58"
 ---
 
 # Experimenting with Word Memory Methods
