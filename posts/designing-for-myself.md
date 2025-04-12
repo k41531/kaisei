@@ -4,7 +4,7 @@ title: "Designing for Myself"
 tags: "murmur"
 created: "2025-04-12 22:32"
 updated: "2025-04-12 22:32"
-published_at: "2025-04-12 22:32"
+published_at: "2025-04-12 22:41"
 ---
 
 # Designing for Myself
