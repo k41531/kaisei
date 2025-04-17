@@ -4,7 +4,7 @@ title: "Excited but Exhausted by AI News"
 tags: "murmur"
 created: "2025-04-17 22:02"
 updated: "2025-04-17 22:02"
-published_at: "2025-04-17 22:02"
+published_at: "2025-04-17 22:26"
 ---
 
 # Excited but Exhausted by AI News
