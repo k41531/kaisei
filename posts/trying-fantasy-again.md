@@ -4,8 +4,9 @@ title: "Trying Fantasy Again"
 tags: "murmur"
 created: "2025-04-18 22:55"
 updated: "2025-04-18 22:55"
-published_at: "2025-04-18 22:55"
+published_at: "2025-04-18 23:00"
 ---
+
 # Trying Fantasy Again
 
 I'm interested in the novel Fourth Wing.
