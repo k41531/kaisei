@@ -4,7 +4,7 @@ title: "First Workday Blues"
 tags: "murmur"
 created: "2025-04-22 22:09"
 updated: "2025-04-22 22:09"
-published_at: "2025-04-22 22:09"
+published_at: "2025-04-22 22:16"
 ---
 
 # First Workday Blues
