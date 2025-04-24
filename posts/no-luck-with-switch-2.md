@@ -4,7 +4,7 @@ title: "No Luck with Switch 2"
 tags: "murmur"
 created: "2025-04-24 22:45"
 updated: "2025-04-24 22:45"
-published_at: "2025-04-24 22:45"
+published_at: "2025-04-24 22:46"
 ---
 
 # No Luck with Switch 2
