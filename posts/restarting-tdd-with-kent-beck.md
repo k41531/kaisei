@@ -4,7 +4,7 @@ title: "Restarting TDD with Kent Beck"
 tags: "murmur"
 created: "2025-04-28 22:43"
 updated: "2025-04-28 22:43"
-published_at: "2025-04-28 22:43"
+published_at: "2025-04-28 22:49"
 ---
 
 # Restarting TDD with Kent Beck
