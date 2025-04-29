@@ -4,7 +4,7 @@ title: "Getting Interested in Geopolitics"
 tags: "murmur"
 created: "2025-04-29 22:25"
 updated: "2025-04-29 22:25"
-published_at: "2025-04-29 22:25"
+published_at: "2025-04-29 22:38"
 ---
 
 # Getting Interested in Geopolitics
