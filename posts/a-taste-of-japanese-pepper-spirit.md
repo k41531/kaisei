@@ -4,7 +4,7 @@ title: "A Taste of Japanese Pepper Spirit"
 tags: "murmur"
 created: "2025-05-02 23:29"
 updated: "2025-05-02 23:29"
-published_at: "2025-05-02 23:29"
+published_at: "2025-05-02 23:37"
 ---
 
 # A Taste of Japanese Pepper Spirit
