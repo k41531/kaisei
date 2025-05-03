@@ -4,7 +4,7 @@ title: "Catching Up with AI Coding"
 tags: "murmur"
 created: "2025-05-03 23:19"
 updated: "2025-05-03 23:19"
-published_at: "2025-05-03 23:19"
+published_at: "2025-05-03 23:23"
 ---
 
 # Catching Up with AI Coding
