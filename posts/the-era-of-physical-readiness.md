@@ -4,7 +4,7 @@ title: "The Era of Physical Readiness"
 tags: "murmur"
 created: "2025-05-10 23:16"
 updated: "2025-05-10 23:16"
-published_at: "2025-05-10 23:16"
+published_at: "2025-05-10 23:24"
 ---
 
 # The Era of Physical Readiness
