@@ -4,7 +4,7 @@ title: "Not Yet a Wordsmith"
 tags: "murmur"
 created: "2025-05-11 22:24"
 updated: "2025-05-11 22:24"
-published_at: "2025-05-11 22:24"
+published_at: "2025-05-11 22:28"
 ---
 
 I felt it was difficult to use words today.
