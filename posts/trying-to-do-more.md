@@ -4,7 +4,7 @@ title: "Trying to Do More"
 tags: "murmur"
 created: "2025-05-13 22:00"
 updated: "2025-05-13 22:00"
-published_at: "2025-05-13 22:00"
+published_at: "2025-05-13 22:07"
 ---
 
 # Trying to Do More
