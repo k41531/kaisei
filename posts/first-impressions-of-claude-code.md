@@ -4,7 +4,7 @@ title: "First Impressions of Claude Code"
 tags: "murmur"
 created: "2025-06-07 23:24"
 updated: "2025-06-07 23:24"
-published_at: "2025-06-07 23:24"
+published_at: "2025-06-07 23:50"
 ---
 
 # First Impressions of Claude Code
