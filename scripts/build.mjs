@@ -98,21 +98,6 @@ function rowsHtml(entries) {
   return entries.map(postRow).join('\n');
 }
 
-const ABOUT_HTML = `
-<section class="ds-card" aria-label="About">
-  <div class="ds-card__head">
-    <h2 class="ds-card__title">About</h2>
-    <span class="ds-card__meta">kaisei.dev</span>
-  </div>
-  <div class="ds-card__body about-body">
-    <p><span class="label">Name</span><span class="about-value">Kaisei</span></p>
-    <p><span class="label">Email</span><a class="about-value" href="mailto:me@kaisei.dev">me@kaisei.dev</a></p>
-    <p><span class="label">GitHub</span><a class="about-value" target="_blank" rel="noopener" href="https://github.com/k41531">github.com/k41531</a></p>
-    <p><span class="label">X</span><a class="about-value" target="_blank" rel="noopener" href="https://x.com/k41531">x.com/k41531</a></p>
-    <p><span class="label">Zenn</span><a class="about-value" target="_blank" rel="noopener" href="https://zenn.dev/k41531">zenn.dev/k41531</a></p>
-  </div>
-</section>`;
-
 function tagsHtml(tags) {
   if (!tags || tags.length === 0) return '';
   return `<div class="post-tags">${tags
@@ -210,8 +195,7 @@ async function main() {
   });
 
   // 1. home
-  const homeBody = `${ABOUT_HTML}
-
+  const homeBody = `
 <section class="home-section">
   <h2 class="section-title">New posts</h2>
   <div class="post-list">${rowsHtml(allByDate.slice(0, 10))}</div>

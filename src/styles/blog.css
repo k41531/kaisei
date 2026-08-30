@@ -159,31 +159,6 @@ footer span {
   margin-top: 40px;
 }
 
-.about-body {
-  display: grid;
-  gap: 8px;
-}
-
-.about-body p {
-  display: flex;
-  gap: 16px;
-  align-items: baseline;
-}
-
-.about-body .label {
-  width: 72px;
-  color: var(--fg-muted);
-}
-
-.about-value {
-  color: var(--fg);
-  text-decoration: none;
-}
-
-a.about-value {
-  color: var(--c-data-blue);
-}
-
 /* ===== Post list rows ===== */
 .post-list {
   display: flex;
