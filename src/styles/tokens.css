@@ -1,0 +1,247 @@
+/* Design tokens (single source of truth)
+ *
+ * Merges colors & type, spacing & motion, shape, elevation, and focus.
+ * Consumed by components.css and other downstream stylesheets.
+ *
+ * Color direction:  SOLDER  — H230, chroma 0.028, neon-hot data
+ * Type direction:   DRAFT   — Plex Serif display + Plex Sans body + Mono data
+ * Mode: twin light & dark via [data-theme="dark"] on <html>.
+ */
+
+@import './fonts/fonts.css';
+
+:root {
+  /* ===== NEUTRALS — SOLDER, LIGHT ===== */
+  --c-neutral-00: oklch(99.0% 0.004 230);  /* canvas */
+  --c-neutral-05: oklch(97.2% 0.007 230);  /* panel */
+  --c-neutral-10: oklch(94.5% 0.010 230);  /* sunken */
+  --c-neutral-15: oklch(90.5% 0.013 230);  /* rule */
+  --c-neutral-20: oklch(84.0% 0.016 230);  /* border */
+  --c-neutral-30: oklch(70.0% 0.020 230);  /* strong */
+  --c-neutral-50: oklch(54.0% 0.022 230);  /* muted */
+  --c-neutral-70: oklch(37.0% 0.020 230);  /* secondary */
+  --c-neutral-85: oklch(21.0% 0.018 230);  /* body */
+  --c-neutral-95: oklch(11.0% 0.014 230);  /* ink */
+
+  --bg: var(--c-neutral-00);
+  --bg-panel: var(--c-neutral-05);
+  --bg-sunken: var(--c-neutral-10);
+  --rule: var(--c-neutral-15);
+  --border: var(--c-neutral-20);
+  --border-strong: var(--c-neutral-30);
+  --fg-muted: var(--c-neutral-50);
+  --fg-secondary: var(--c-neutral-70);
+  --fg: var(--c-neutral-85);
+  --fg-strong: var(--c-neutral-95);
+
+  /* ===== DATA PALETTE — SOLDER (high chroma) ===== */
+  --c-data-red:     oklch(60% 0.23  25);
+  --c-data-orange:  oklch(70% 0.19  55);
+  --c-data-amber:   oklch(78% 0.17  85);
+  --c-data-green:   oklch(64% 0.19 145);
+  --c-data-teal:    oklch(64% 0.15 195);
+  --c-data-blue:    oklch(56% 0.22 245);
+  --c-data-violet:  oklch(56% 0.24 295);
+  --c-data-magenta: oklch(60% 0.24 340);
+
+  --signal-ok:    var(--c-data-green);
+  --signal-warn:  var(--c-data-amber);
+  --signal-error: var(--c-data-red);
+  --signal-info:  var(--c-data-blue);
+
+  /* ===== TYPE — DRAFT ===== */
+  --font-display: var(--font-serif);   /* Plex Serif for display + long headings */
+  --font-body:    var(--font-sans);    /* Plex Sans for UI + body */
+  --font-data:    var(--font-mono);    /* Monaspace Neon for code + data */
+
+  --t-micro:   11px;
+  --t-small:   12px;
+  --t-body:    14px;
+  --t-lead:    17px;
+  --t-h6:      14px;
+  --t-h5:      16px;
+  --t-h4:      19px;
+  --t-h3:      24px;
+  --t-h2:      32px;
+  --t-h1:      44px;
+  --t-display: 64px;
+
+  --lh-tight: 1.08;
+  --lh-snug:  1.22;
+  --lh-body:  1.55;
+  --lh-loose: 1.7;
+
+  --tracking-tight:  -0.015em;
+  --tracking-normal:  0;
+  --tracking-wide:    0.02em;
+  --tracking-caps:    0.08em;
+
+  /* ===== SPACING — 4px grid ===== */
+  --s-0:   0;
+  --s-0-5: 2px;
+  --s-1:   4px;
+  --s-2:   8px;
+  --s-3:  12px;
+  --s-4:  16px;
+  --s-5:  20px;
+  --s-6:  24px;
+  --s-7:  28px;
+  --s-8:  32px;
+  --s-10: 40px;
+  --s-12: 48px;
+  --s-14: 56px;
+  --s-16: 64px;
+  --s-20: 80px;
+  --s-24: 96px;
+  --s-32: 128px;
+  --s-40: 160px;
+
+  /* component inset presets */
+  --inset-compact: var(--s-2) var(--s-3);   /*  8 × 12 — dense */
+  --inset-cozy:    var(--s-3) var(--s-4);   /* 12 × 16 — default */
+  --inset-roomy:   var(--s-4) var(--s-6);   /* 16 × 24 — cards */
+
+  /* stack gaps */
+  --gap-tight: var(--s-2);
+  --gap-base:  var(--s-4);
+  --gap-wide:  var(--s-6);
+
+  /* ===== RADIUS ===== */
+  --radius-0: 0;         /* hard edges — default */
+  --radius-1: 2px;       /* keycaps, mono UI */
+  --radius-2: 4px;       /* default for buttons / inputs */
+  --radius-3: 6px;       /* cards */
+  --radius-pill: 999px;  /* rarely used — status pills only */
+
+  /* ===== STROKE / RULE WEIGHTS =====
+   * Five weights. Weight IS the hierarchy in a rule-based system. */
+  --stroke-hairline: 0.5px;   /* structural grids, subtle dividers (use with 1x display) */
+  --stroke-rule:     1px;     /* default rule, default border */
+  --stroke-emphasis: 1.5px;   /* selected, focused, primary */
+  --stroke-heavy:    2px;     /* section breaks, headers underline */
+  --stroke-bold:     3px;     /* sparingly — diagrammatic emphasis */
+
+  /* ===== ELEVATION — surface-based, NOT shadow-based =====
+   * Each level is a bg + border combo. Shadows only appear when
+   * a surface genuinely floats (modals, popovers). */
+  --elev-0-bg:     var(--bg);
+  --elev-0-border: var(--border);
+
+  --elev-1-bg:     var(--bg-panel);
+  --elev-1-border: var(--border);
+
+  --elev-2-bg:     var(--bg-panel);
+  --elev-2-border: var(--border-strong);
+
+  /* Soft shadows for FLOATING elements only */
+  --shadow-pop:   0 1px 0 var(--rule),
+                  0 4px 12px oklch(0% 0 0 / 0.06),
+                  0 16px 32px oklch(0% 0 0 / 0.04);
+  --shadow-modal: 0 1px 0 var(--rule),
+                  0 8px 24px oklch(0% 0 0 / 0.08),
+                  0 32px 64px oklch(0% 0 0 / 0.10);
+
+  /* ===== MOTION — short & curt ===== */
+  --dur-instant: 80ms;
+  --dur-quick:   140ms;
+  --dur-base:    220ms;
+  --dur-slow:    360ms;
+
+  /* Cubic curves tuned for UI — no overshoot, no bounce */
+  --ease-out:       cubic-bezier(0.2, 0.8, 0.2, 1);    /* exits, reveals */
+  --ease-in-out:    cubic-bezier(0.4, 0.0, 0.2, 1);    /* positional */
+  --ease-step:      steps(4, end);                      /* loading indicators */
+  --ease-snap:      cubic-bezier(0.5, 0, 0, 1);        /* fast+firm */
+
+  /* ===== FOCUS RING ===== */
+  --focus-ring: 0 0 0 var(--stroke-emphasis) var(--c-data-blue),
+                0 0 0 calc(var(--stroke-emphasis) + 2px) var(--bg);
+}
+
+/* ===== DARK — SOLDER ===== */
+[data-theme="dark"] {
+  --c-neutral-00: oklch(12% 0.018 230);
+  --c-neutral-05: oklch(15% 0.022 230);
+  --c-neutral-10: oklch(18% 0.025 230);
+  --c-neutral-15: oklch(22% 0.028 230);
+  --c-neutral-20: oklch(28% 0.030 230);
+  --c-neutral-30: oklch(40% 0.030 230);
+  --c-neutral-50: oklch(56% 0.028 230);
+  --c-neutral-70: oklch(74% 0.022 230);
+  --c-neutral-85: oklch(88% 0.016 230);
+  --c-neutral-95: oklch(96% 0.010 230);
+
+  --bg: var(--c-neutral-00);
+  --bg-panel: var(--c-neutral-05);
+  --bg-sunken: var(--c-neutral-10);
+  --rule: var(--c-neutral-20);
+  --border: var(--c-neutral-30);
+  --border-strong: var(--c-neutral-50);
+  --fg-muted: var(--c-neutral-50);
+  --fg-secondary: var(--c-neutral-70);
+  --fg: var(--c-neutral-85);
+  --fg-strong: var(--c-neutral-95);
+
+  --c-data-red:     oklch(72% 0.23 25);
+  --c-data-orange:  oklch(78% 0.19 55);
+  --c-data-amber:   oklch(84% 0.17 85);
+  --c-data-green:   oklch(76% 0.19 145);
+  --c-data-teal:    oklch(76% 0.15 195);
+  --c-data-blue:    oklch(72% 0.22 245);
+  --c-data-violet:  oklch(72% 0.24 295);
+  --c-data-magenta: oklch(74% 0.24 340);
+
+  --shadow-pop:   0 1px 0 oklch(0% 0 0 / 0.5),
+                  0 4px 12px oklch(0% 0 0 / 0.4),
+                  0 16px 32px oklch(0% 0 0 / 0.3);
+  --shadow-modal: 0 1px 0 oklch(0% 0 0 / 0.6),
+                  0 8px 24px oklch(0% 0 0 / 0.5),
+                  0 32px 64px oklch(0% 0 0 / 0.4);
+}
+
+/* ===== BASE ===== */
+*, *::before, *::after { box-sizing: border-box; }
+html, body {
+  margin: 0; padding: 0;
+  background: var(--bg); color: var(--fg);
+  font-family: var(--font-body);
+  font-size: var(--t-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* DRAFT: display + h1/h2 use serif; h3 down use sans */
+h1, .h1 { font-family: var(--font-display); font-size: var(--t-h1); line-height: var(--lh-tight); font-weight: 500; letter-spacing: var(--tracking-tight); margin: 0; }
+h2, .h2 { font-family: var(--font-display); font-size: var(--t-h2); line-height: var(--lh-tight); font-weight: 500; letter-spacing: var(--tracking-tight); margin: 0; }
+h3, .h3 { font-family: var(--font-body);    font-size: var(--t-h3); line-height: var(--lh-snug);  font-weight: 600; margin: 0; }
+h4, .h4 { font-family: var(--font-body);    font-size: var(--t-h4); line-height: var(--lh-snug);  font-weight: 600; margin: 0; }
+h5, .h5 { font-family: var(--font-body);    font-size: var(--t-h5); line-height: var(--lh-snug);  font-weight: 600; margin: 0; }
+h6, .h6 { font-family: var(--font-body);    font-size: var(--t-h6); line-height: var(--lh-snug);  font-weight: 600; margin: 0; }
+p { margin: 0; }
+.display { font-family: var(--font-display); font-size: var(--t-display); line-height: var(--lh-tight); font-weight: 400; letter-spacing: var(--tracking-tight); }
+.lead { font-family: var(--font-display); font-style: italic; font-size: var(--t-lead); line-height: 1.5; font-weight: 400; }
+
+code, kbd, samp, pre, .mono {
+  font-family: var(--font-data);
+  font-feature-settings: "ss01", "ss02", "zero";
+}
+.label {
+  font-family: var(--font-data);
+  font-size: var(--t-micro);
+  font-weight: 500;
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+.stamp {
+  font-family: var(--font-data);
+  font-size: var(--t-micro);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  border: 1px solid var(--border);
+  padding: 2px 6px;
+  display: inline-block;
+}
+

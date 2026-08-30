@@ -1,0 +1,19 @@
+{
+  "name": "kaisei-blog",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Kaisei's home page — plain build script + Cloudflare Workers (Static Assets)",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "preview": "wrangler dev"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "markdown-it": "^15.0.1",
+    "shiki": "^4.4.3"
+  },
+  "devDependencies": {
+    "wrangler": "^4.127.1"
+  }
+}
