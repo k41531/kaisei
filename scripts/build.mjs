@@ -161,7 +161,7 @@ async function postArticleHtml(post) {
   const { content } = matter(raw);
   // 記事タイトルはフロントマッターから別途 <h1> で描画するため、
   // 本文先頭の H1（タイトル行）は除去して重複を防ぐ
-  const contentWithoutLeadingH1 = content.replace(/^# [^\n]*\n+/, '');
+  const contentWithoutLeadingH1 = content.replace(/^\s*# [^\n]*\n+/, '');
   const body = await renderMarkdown(contentWithoutLeadingH1);
 
   const emoji = post.emoji ? `${post.emoji} ` : '';

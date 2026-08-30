@@ -1,0 +1,12 @@
+{
+  "name": "kaisei",
+  "main": "src/worker.ts",
+  "compatibility_date": "2026-08-01",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS"
+  },
+  "observability": {
+    "enabled": true
+  }
+}
