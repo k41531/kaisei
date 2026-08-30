@@ -92,6 +92,29 @@ header nav + .ds-btn {
   margin-left: auto;
 }
 
+/* テーマ切替ボタンは控えめに（一覧の邪魔をしない） */
+#themeToggle {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+#themeToggle:hover {
+  color: var(--fg-secondary);
+  background: var(--bg-panel);
+  border-color: var(--border);
+}
+#themeToggle:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1.5px var(--c-data-blue), 0 0 0 calc(1.5px + 2px) var(--bg);
+}
+
 /* ===== Footer ===== */
 footer {
   margin-top: 64px;
@@ -168,22 +191,25 @@ a.about-value {
 }
 
 .project-card {
-  display: block;
-  text-decoration: none;
-  width: 220px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
 }
 
 .project-card img {
-  display: block;
-  width: 100%;
-  height: auto;
+  flex: none;
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 4px;
 }
 
 .project-card__body {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  padding: 12px 16px;
+  padding: 0;
 }
 
 /* ===== Post list rows ===== */
