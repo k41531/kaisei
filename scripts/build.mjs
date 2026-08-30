@@ -113,42 +113,6 @@ const ABOUT_HTML = `
   </div>
 </section>`;
 
-const projectCards = [
-  {
-    href: 'https://k41531.github.io/2024-AdventCalendar/',
-    img: '/images/advent-calendar-2024.png',
-    title: '2024 Advent Calendar',
-    meta: 'web',
-  },
-  {
-    href: 'https://www.raycast.com/k41531/snap-jot',
-    img: '/images/snap-jot.png',
-    title: 'SnapJot',
-    meta: 'raycast extension',
-  },
-  {
-    href: 'https://k41531.github.io/2022-AdventCalendar',
-    img: '/images/advent-calendar-2022.png',
-    title: '2022 Advent Calendar',
-    meta: 'web',
-  },
-];
-
-function projectCardsHtml() {
-  return projectCards
-    .map(
-      (p) => `
-  <a class="ds-card project-card" target="_blank" rel="noopener" href="${escapeHtml(p.href)}">
-    <img src="${escapeHtml(p.img)}" alt="${escapeHtml(p.title)}">
-    <div class="project-card__body">
-      <span class="ds-card__title">${escapeHtml(p.title)}</span>
-      <span class="ds-card__meta">${escapeHtml(p.meta)}</span>
-    </div>
-  </a>`,
-    )
-    .join('\n');
-}
-
 function tagsHtml(tags) {
   if (!tags || tags.length === 0) return '';
   return `<div class="post-tags">${tags
@@ -251,12 +215,6 @@ async function main() {
 <section class="home-section">
   <h2 class="section-title">New posts</h2>
   <div class="post-list">${rowsHtml(allByDate.slice(0, 10))}</div>
-</section>
-
-<section class="home-section">
-  <h2 class="section-title">Projects</h2>
-  <div class="projects">${projectCardsHtml()}
-  </div>
 </section>`;
 
   await writePage(

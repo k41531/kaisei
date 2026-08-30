@@ -184,34 +184,6 @@ a.about-value {
   color: var(--c-data-blue);
 }
 
-.projects {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.project-card {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  min-width: 0;
-}
-
-.project-card img {
-  flex: none;
-  width: 48px;
-  height: 48px;
-  object-fit: cover;
-  border-radius: 4px;
-}
-
-.project-card__body {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  padding: 0;
-}
-
 /* ===== Post list rows ===== */
 .post-list {
   display: flex;
